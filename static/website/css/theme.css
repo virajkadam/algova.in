@@ -1,0 +1,183 @@
+body.theme_light .header.header-scrolled {
+	background:#fff;
+	box-shadow:0 2px 20px rgba(1,41,112,0.1)
+}
+body.theme_light .navbar a,.navbar a:focus {
+	color:#013289;
+}
+
+body.theme_light .services .service-box.blue:hover {
+	background-color: var(--bs-info);
+}
+
+body.theme_light .services .service-box.orange:hover {
+	background-color: var(--bs-warning);
+}
+
+body.theme_light .services .service-box.green:hover {
+	background-color: var(--bs-teal);
+}
+
+body.theme_light section,
+body.theme_light .footer .footer-newsletter,
+body.theme_light .footer .footer-top,
+body.theme_light .navbar-mobile ul {
+	box-shadow:0 -15px 20px 0 #dfebff8a;
+	border:1px solid #e1ecff;
+	background-color: var(--bs-white);
+}
+
+body.theme_light .about .content {
+	background-color:#f6f9ff;
+}
+
+body.theme_light .section-header h2,
+body.theme_light .values .box h3,
+body.theme_light .contact .info-box h3,
+body.theme_light .features .icon-box h4,
+body.theme_light .services .service-box h4,
+body.theme_light .footer .footer-top h4,
+body.theme_light .hero h1,
+body.theme_light .hero h2 {
+	color:#012970;
+}
+
+
+body.theme_light .section-header p,
+body.theme_light section .container .row p,
+body.theme_light .pricing ul li,
+body.theme_light .footer .footer-newsletter p,
+body.theme_light .footer .footer-top .footer-info p,
+body.theme_light .footer .footer-top .footer-links ul a,
+body.theme_light .hero p {
+	color:#848484;
+}
+
+body.theme_light .pricing .box {
+	background:#fff;
+}
+
+body.theme_light .contact .info-box {
+	color:#444;
+	background:#f6f9ff;
+}
+
+body.theme_light .footer .footer-newsletter {
+	background:#f6f9ff;
+	border-top:1px solid #e1ecff;
+}
+
+body.theme_light .footer .footer-newsletter form,
+body.theme_light .footer .footer-top{
+	background-color:#fff;
+}
+
+body.theme_light .footer .footer-top .footer-links ul a{
+	color:#013289;
+}
+
+body.theme_light .hero {
+	background:url("../img/background/light.png") top center fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover
+}
+
+body.theme_light .mobile-nav-toggle {
+	color: #444;
+}
+
+/*---------------------  DARK START  ----------------------------*/
+
+
+body.theme_dark .mobile-nav-toggle {
+	color: #fff;
+}
+
+body.theme_dark .hero {
+	background:url("../img/background/dark.png") top center fixed;
+	-webkit-background-size:cover;
+	-moz-background-size:cover;
+	-o-background-size:cover;
+	background-size:cover
+}
+
+body.theme_dark .footer .footer-newsletter form,
+body.theme_dark .footer .footer-top {
+	background-color: #444;
+}
+
+body.theme_dark .contact .info-box h3 {
+	color:#012970;
+}
+
+body.theme_dark .contact .info-box {
+	color:#444;
+}
+
+body.theme_dark .pricing .box {
+	border: 1px solid var(--bs-gray-200);
+}
+
+body.theme_dark .services .service-box.blue:hover {
+	background-color: var(--bs-info-text-emphasis);
+}
+
+body.theme_dark .services .service-box.orange:hover {
+	background-color: var(--bs-warning-text-emphasis);
+}
+
+body.theme_dark .services .service-box.green:hover {
+	background-color: var(--bs-success-text-emphasis);
+}
+
+
+body.theme_dark .section-header h2,
+body.theme_dark .values .box h3,
+body.theme_dark .features .icon-box h4,
+body.theme_dark .services .service-box h4,
+body.theme_dark .contact .info-box h3,
+body.theme_dark .footer .footer-top h4,
+body.theme_dark .hero h1,
+body.theme_dark .hero h2 {
+	color:#0d6efd;
+}
+
+
+body.theme_dark .section-header p,
+body.theme_dark section .container .row p,
+body.theme_dark .pricing ul li,
+body.theme_dark .footer .footer-newsletter p,
+body.theme_dark .footer .footer-top .footer-info p,
+body.theme_dark .footer .footer-top .footer-links ul a,
+body.theme_dark .hero p {
+	color:#adb5bd;
+}
+
+body.theme_dark .features .feature-box {
+	background-color: var(--bs-gray-700);
+}
+
+body.theme_dark .about .content {
+	background-color: var(--bs-gray-800);
+}
+
+body.theme_dark section,
+body.theme_dark .footer .footer-newsletter,
+body.theme_dark .footer .footer-top,
+body.theme_dark .navbar-mobile ul {
+	background-color: var(--bs-body-color);
+	box-shadow:0 -15px 20px 0 #00000080;
+	border:1px solid #343a40;
+}
+
+body.theme_dark .navbar a,.navbar a:focus {
+	color:#0d6efd;
+}
+
+body.theme_dark .header.header-scrolled {
+	background-color: var(--bs-body-color);
+	box-shadow: 0 2px 20px #444;
+}
+
