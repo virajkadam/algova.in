@@ -154,7 +154,7 @@
 	
 	var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
 	var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
-	  return new bootstrap.Tooltip(tooltipTriggerEl)
+		return new bootstrap.Tooltip(tooltipTriggerEl)
 	})
 
 
@@ -291,3 +291,21 @@
 
 
 })();
+
+$(document).ready(function() {
+
+	const current_theme = Cookies.get('theme');
+
+	if (current_theme != null) {
+		$("body").attr("class",current_theme);
+	}
+
+	$('#theme_switch').click(function() {
+		$("body").toggleClass("theme_light theme_dark");
+		$(this).toggleClass("bx-loader bx-sun");
+		$(this).toggleClass("text-primary");
+
+		let selected_theme = $('body').attr('class');
+		Cookies.set('theme',selected_theme);
+	});
+});
