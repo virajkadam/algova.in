@@ -4,7 +4,8 @@
 
 body {
 	font-family:"Nunito", "Public Sans", "Ubuntu", "Droid Sans", "Helvetica Neue", sans-serif;
-	color:#444
+	color:#444;
+	font-size: 1.1rem;
 }
 
 a {
@@ -145,7 +146,7 @@ section {
 }
 
 .header.header-scrolled {
-	padding:15px 0;
+	padding:10px 0;
 }
 
 
@@ -156,7 +157,7 @@ section {
 }
 
 .app-brand-link img {
-	width: 50px;
+	width: 60px;
 }
 
 .app-brand-logo {
@@ -168,15 +169,21 @@ section {
 }
 
 .app-brand-text {
-    font-size: 2.5em;
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #8BC34A;
+	font-size: 2.5em;
+	font-weight: 800;
+	letter-spacing: 1px;
+	color: #8BC34A;
 }
 
 .app-brand-slogan {
-	color: #697a8d;
-	font-size: .8em;
+	font-size: 15px;
+	color: var(--bs-blue) !important;
+	font-weight: 700;
+}
+
+.app-brand-beta {
+	color: var(--bs-secondary);
+	font-size: 1em;
 }
 
 .navbar {
@@ -200,8 +207,8 @@ section {
 	align-items:center;
 	justify-content:space-between;
 	padding:10px 20px;
-	font-size:18px;
-	font-weight:700;
+	font-size:1.2em;
+	font-weight:600;
 	white-space:nowrap;
 	transition:.3s
 }
@@ -838,6 +845,10 @@ section {
 .pricing img {
 	padding:30px 40px;
 	width: 200px;
+}
+
+ul{
+	list-style:none;
 }
 
 .pricing ul {
@@ -2034,7 +2045,6 @@ section {
 
 
 .footer {
-	background:#f6f9ff;
 	padding:0 0 30px;
 	font-size:1em
 }

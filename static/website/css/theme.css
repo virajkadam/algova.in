@@ -21,7 +21,8 @@ body.theme_light .services .service-box.green:hover {
 body.theme_light section,
 body.theme_light .footer .footer-newsletter,
 body.theme_light .footer .footer-top,
-body.theme_light .navbar-mobile ul {
+body.theme_light .navbar-mobile ul,
+body.theme_light .footer {
 	box-shadow:0 -15px 20px 0 #dfebff8a;
 	border:1px solid #e1ecff;
 	background-color: var(--bs-white);
@@ -49,7 +50,8 @@ body.theme_light .pricing ul li,
 body.theme_light .footer .footer-newsletter p,
 body.theme_light .footer .footer-top .footer-info p,
 body.theme_light .footer .footer-top .footer-links ul a,
-body.theme_light .hero p {
+body.theme_light .hero p,
+body.theme_light .footer .container p{
 	color:#848484;
 }
 
@@ -151,7 +153,8 @@ body.theme_dark .pricing ul li,
 body.theme_dark .footer .footer-newsletter p,
 body.theme_dark .footer .footer-top .footer-info p,
 body.theme_dark .footer .footer-top .footer-links ul a,
-body.theme_dark .hero p {
+body.theme_dark .hero p,
+body.theme_dark .footer .container p{
 	color:#adb5bd;
 }
 
@@ -166,14 +169,15 @@ body.theme_dark .about .content {
 body.theme_dark section,
 body.theme_dark .footer .footer-newsletter,
 body.theme_dark .footer .footer-top,
-body.theme_dark .navbar-mobile ul {
+body.theme_dark .navbar-mobile ul,
+body.theme_dark .footer {
 	background-color: var(--bs-body-color);
 	box-shadow:0 -15px 20px 0 #00000080;
 	border:1px solid #343a40;
 }
 
 body.theme_dark .navbar a,.navbar a:focus {
-	color:#0d6efd;
+	color: var(--bs-blue);
 }
 
 body.theme_dark .header.header-scrolled {
