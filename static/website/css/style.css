@@ -193,14 +193,16 @@ section {
 }
 
 .app-brand-slogan {
-	font-size: 15px;
-	color: var(--bs-gray-600) !important;
+	font-size: 16px;
+	color: var(--bs-blue) !important;
 	font-weight: 700;
 }
 
 .app-brand-beta {
 	color: var(--bs-secondary);
-	font-size: 1em;
+	font-size: .8em;
+	position: relative;
+    bottom: 20px;
 }
 
 .navbar {
@@ -224,10 +226,10 @@ section {
 	align-items:center;
 	justify-content:space-between;
 	padding:10px 20px;
-	font-size:1.2em;
+	font-size:1.1em;
 	font-weight:600;
 	white-space:nowrap;
-	transition:.3s
+	transition:.4s;
 }
 
 .navbar .getstarted,.navbar .getstarted:focus {
@@ -255,7 +257,7 @@ section {
 	visibility:hidden;
 	background:#fff;
 	box-shadow:0 0 30px rgba(127,137,161,0.25);
-	transition:.3s;
+	transition:.4s;
 	border-radius:4px
 }
 
@@ -569,7 +571,7 @@ section {
 }
 
 .box:hover {
-	box-shadow: 4px 5px 15px var(--bs-gray-500);
+	box-shadow: 3px 4px 15px -5px var(--bs-gray-500);
 }
 
 
@@ -626,7 +628,7 @@ section {
 	border: 1px solid var(--bs-gray-200);
 	padding:24px 20px;
 	box-shadow:0 0 30px rgba(1,41,112,0.08);
-	transition:.3s;
+	transition:.4s;
 	height:100%;
 	border-radius: 13px;
 }
@@ -736,17 +738,13 @@ section {
 	margin-right:15px
 }
 
-.features .feature-icons .content .icon-box p {
-	font-size:15px;
-}
-
 .services .service-box {
 	box-shadow:0 0 30px rgba(1,41,112,0.08);
 	border: 1px solid var(--bs-gray-200);
 	height:100%;
 	padding:50px 30px;
 	text-align:center;
-	transition:.3s;
+	transition:.4s;
 	border-radius:24px;
 }
 
@@ -886,7 +884,7 @@ ul{
 	transition:none;
 	font-size:16px;
 	font-weight:600;
-	transition:.3s;
+	transition:.4s;
 	border:1px solid #4154f1
 }
 
@@ -995,7 +993,7 @@ ul{
 	padding: 0.5em 1em;
 	background:#4154f1;
 	color:#fff;
-	transition:.3s;
+	transition:.4s;
 	border-radius:4px
 }
 
@@ -1090,7 +1088,7 @@ ul{
 }
 
 .footer .footer-top .footer-links ul a {
-	transition:.3s;
+	transition:.4s;
 	display:inline-block;
 	line-height:1;
 	color: var(--bs-gray-600);
