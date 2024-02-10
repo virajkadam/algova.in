@@ -27,7 +27,9 @@ a:hover {
 .contact .box h3,
 .footer .footer-top h4,
 .hero h1,
-.hero h2 {
+.hero h2,
+.nav-link:focus,
+.nav-link:hover {
 	color:var(--bs-primary);
 }
 
@@ -122,17 +124,15 @@ section {
 }
 
 .back-to-top {
-	position:fixed;
-	visibility:hidden;
-	opacity:0;
-	right:40px;
-	bottom:50px;
-	z-index:99999;
-	background:#4154f1;
-	width:50px;
-	height:50px;
-	border-radius:7px;
-	transition:all .4s
+	position: fixed;
+	right: 30px;
+	bottom: 40px;
+	z-index: 99999;
+	background: #4154f1;
+	width: 40px;
+	height: 40px;
+	border-radius: 10px;
+	transition: all .4s;
 }
 
 .back-to-top i {
@@ -174,7 +174,7 @@ section {
 }
 
 .app-brand-link img {
-	width: 60px;
+	width: 70px;
 }
 
 .app-brand-logo {
@@ -202,7 +202,7 @@ section {
 	color: var(--bs-secondary);
 	font-size: .8em;
 	position: relative;
-    bottom: 20px;
+	bottom: 20px;
 }
 
 .navbar {
@@ -1001,16 +1001,8 @@ ul{
 	background:#5969f3
 }
 
-.footer .footer-top {
-	background:url("../img/footer-bg.png") no-repeat right top;
-	
+.footer .footer-top {	
 	padding:60px 0 30px
-}
-
-@media (max-width: 992px) {
-	.footer .footer-top {
-		background-position:center bottom
-	}
 }
 
 .footer .footer-top .footer-info {
