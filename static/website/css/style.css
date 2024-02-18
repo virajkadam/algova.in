@@ -62,7 +62,7 @@ section {
 
 .section-header p {
 	margin:10px 0;
-	font-size:2em;
+	font-size: 1.7em;
 }
 
 @media (max-width: 768px) {
@@ -175,7 +175,8 @@ section {
 }
 
 .app-brand-link img {
-	width: 70px;
+	width: 64px;
+	margin-right: 10px;
 }
 
 .app-brand-logo {
