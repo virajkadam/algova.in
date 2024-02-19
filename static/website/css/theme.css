@@ -61,7 +61,19 @@ body.theme_light .mobile-nav-toggle {
 	color: #444;
 }
 
+body.theme_light #call_to_action .background-container {
+	background-color: #ffffb5;
+	background-image: linear-gradient(315deg, #ffffb5 0%, #247ba0 74%);
+	border: 1px solid var(--bs-teal);
+}
+
 /*---------------------  DARK START  ----------------------------*/
+
+body.theme_dark #call_to_action .background-container {
+	background-color: #310e68;
+	background-image: linear-gradient(316deg, #310e68 0%, #5f0f40 74%);
+	border: 1px solid var(--bs-purple);
+}
 
 
 body.theme_dark .mobile-nav-toggle {
@@ -127,3 +139,6 @@ body.theme_dark .header.header-scrolled {
 	box-shadow: 0 2px 20px #444;
 }
 
+body.theme_dark{
+	background-color: var(--bs-gray-900);
+}

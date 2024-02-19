@@ -18,6 +18,16 @@ a:hover {
 	text-decoration:none
 }
 
+
+#call_to_action .background-container {
+	position: relative;
+	text-align: center!important;
+	border-radius: 17px;
+	color: #fff;
+}
+
+
+
 .navbar a,
 .navbar a:focus,
 .section-header h2,
@@ -389,7 +399,6 @@ section {
 .navbar-mobile a,.navbar-mobile a:focus {
 	padding:3%;
 	font-size: 1.3em;
-	color: #012970;
 }
 
 .navbar-mobile a:hover,.navbar-mobile .active,.navbar-mobile li:hover>a {
@@ -453,32 +462,14 @@ section {
 	font-size:26px
 }
 
-.hero .btn-get-started {
+.btn-get-started {
 	margin-top:30px;
-	line-height:0;
 	padding:15px 40px;
-	border-radius:4px;
-	transition:.5s;
+	border-radius:7px;
 	color:#fff;
 	background:#4154f1;
-	box-shadow:0 5px 30px rgba(65,84,241,0.4)
 }
 
-.hero .btn-get-started span {
-	font-weight:600;
-	font-size:16px;
-	letter-spacing:1px
-}
-
-.hero .btn-get-started i {
-	margin-left:5px;
-	font-size:18px;
-	transition:.3s
-}
-
-.hero .btn-get-started:hover i {
-	transform:translateX(5px)
-}
 
 @media (min-width: 1024px) {
 	.hero {
@@ -1107,4 +1098,10 @@ ul{
 	text-align:center;
 	font-size:13px;
 	color:#012970
+}
+
+.footer .footer_indian_flag{
+	width: 30px;
+	border-radius: 4px;
+	margin-bottom: 10px;
 }
