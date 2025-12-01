@@ -62,15 +62,13 @@
 	<link href="https://algova.in/static/website/algova_logo.png" rel="apple-touch-icon">
 
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css">
-	<link rel="stylesheet" href="static/website/css/style.css">
-	<link rel="stylesheet" href="static/website/css/theme.css">
-	<!-- Tailwind CSS CDN -->
+	<!-- Tailwind CSS CDN - Load first to allow overrides -->
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script>
 		tailwind.config = {
+			important: true,
 			theme: {
 				extend: {
 					colors: {
@@ -84,6 +82,8 @@
 			}
 		}
 	</script>
+	<link rel="stylesheet" href="static/website/css/style.css">
+	<link rel="stylesheet" href="static/website/css/theme.css">
 </head>
 
 <body>
@@ -177,102 +177,146 @@
 
 
 
-	<main id="main" class="pt-20 lg:pt-24">
+	<main id="main" class="pt-20 lg:pt-24 min-h-screen">
 
-		<section id="hero" class="hero flex items-center py-20 lg:py-32">
-			<div class="container mx-auto px-4">
-
-				<div class="flex flex-wrap">
-					<div class="w-full md:w-5/12 lg:w-5/12 xl:w-5/12 flex items-center justify-center hero-img mb-10 md:mb-0" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/hero_side_img.png" class="w-full max-w-full h-auto">
+		<section id="hero" class="hero relative flex items-center min-h-[90vh] py-20 lg:py-32 overflow-hidden">
+			<!-- Background Gradient -->
+			<div class="absolute inset-0 bg-gradient-to-br from-algova-primary/5 via-transparent to-algova-secondary/5 dark:from-blue-600/10 dark:via-transparent dark:to-blue-700/10"></div>
+			<div class="absolute top-0 right-0 w-96 h-96 bg-algova-primary/10 dark:bg-blue-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+			<div class="absolute bottom-0 left-0 w-96 h-96 bg-algova-secondary/10 dark:bg-blue-500/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/2"></div>
+			
+			<div class="container mx-auto px-4 relative z-10">
+				<div class="flex flex-wrap items-center">
+					<div class="w-full md:w-5/12 lg:w-5/12 xl:w-5/12 flex items-center justify-center hero-img mb-10 md:mb-0">
+						<div class="relative">
+							<div class="absolute inset-0 bg-gradient-to-r from-algova-primary/20 to-algova-secondary/20 dark:from-blue-400/20 dark:to-blue-500/20 rounded-full blur-2xl scale-110"></div>
+							<img src="static/website/img/hero_side_img.png" class="relative w-full max-w-full h-auto transform transition-transform duration-700 hover:scale-105">
+						</div>
 					</div>
-					<div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 flex flex-col justify-center pl-0 md:pl-5">
-						<h1 data-aos="fade-up" class="mb-3 text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">Connect. Invest. Relax.</h1>
-						<h4 data-aos="fade-up" class="mb-5 text-lg md:text-xl">
-							<p class="mt-4 mb-2 text-gray-700 dark:text-gray-300">
-								Elevate your earnings effortlessly with <span class="font-extrabold">ALGOVA</span>.
+					<div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 flex flex-col justify-center pl-0 md:pl-8">
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-6">
+							<span class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+							<span class="text-sm font-medium text-algova-primary dark:text-blue-400">Live Trading Platform</span>
+						</div>
+						<h1 class="mb-6 text-5xl md:text-6xl lg:text-7xl font-extrabold leading-tight">
+							<span class="bg-gradient-to-r from-gray-900 via-algova-primary to-gray-900 dark:from-white dark:via-blue-400 dark:to-white bg-clip-text text-transparent">Connect.</span>
+							<br>
+							<span class="bg-gradient-to-r from-algova-primary via-algova-secondary to-algova-primary dark:from-blue-400 dark:via-blue-500 dark:to-blue-400 bg-clip-text text-transparent">Invest.</span>
+							<br>
+							<span class="bg-gradient-to-r from-gray-900 via-algova-primary to-gray-900 dark:from-white dark:via-blue-400 dark:to-white bg-clip-text text-transparent">Relax.</span>
+						</h1>
+						<div class="mb-8 space-y-4">
+							<p class="text-xl md:text-2xl text-gray-700 dark:text-gray-300 leading-relaxed">
+								Elevate your earnings effortlessly with <span class="font-extrabold text-algova-primary dark:text-blue-400">ALGOVA</span>.
 							</p>
-							<p class="mt-4 mb-2 text-gray-700 dark:text-gray-300">
-								<span class="text-algova-primary dark:text-blue-400">Unlock the path to financial freedom.</span> Modern solutions for steady income through the smart stock exchange trading, designed for everyone.
+							<p class="text-lg md:text-xl text-gray-600 dark:text-gray-400 leading-relaxed">
+								<span class="font-semibold text-algova-primary dark:text-blue-400">Unlock the path to financial freedom.</span> Modern solutions for steady income through smart stock exchange trading, designed for everyone.
 							</p>
-						</h4>
-
-						<div class="text-left lg:text-left" data-aos="fade-up" data-aos-delay="100">
-							<a href="login.html" class="inline-flex items-center mt-8 px-10 py-4 rounded-lg bg-algova-primary text-white font-semibold transition-all duration-300 hover:bg-algova-primary-hover hover:shadow-lg">
-								<span>Get Started</span>
-								<i class='bx bxs-chevron-right bx-fade-right ml-2' ></i>
-							</a>
 						</div>
 
+						<div class="flex flex-wrap gap-4">
+							<a href="login.html" class="group inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-600 dark:to-blue-700 text-white font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-algova-primary/50 dark:hover:shadow-blue-500/50 hover:scale-105 transform">
+								<span>Get Started</span>
+								<i class='bx bxs-chevron-right ml-2 transition-transform duration-300 group-hover:translate-x-1' ></i>
+							</a>
+							<a href="what_is_algova.html" class="inline-flex items-center px-8 py-4 rounded-xl bg-white dark:bg-gray-800 text-algova-primary dark:text-blue-400 font-semibold border-2 border-algova-primary/20 dark:border-blue-400/30 transition-all duration-300 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 hover:border-algova-primary dark:hover:border-blue-400">
+								<span>Learn More</span>
+							</a>
+						</div>
 					</div>
 				</div>
-
 			</div>
 		</section>
 
 
 
-		<section id="about" class="about py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="about" class="about py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">What is Algova?</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is modern path to your financial freedom</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">About Us</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">What is Algova?</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Algova is the modern path to your financial freedom</p>
 				</header>
 
-				<div class="flex flex-wrap gap-0">
+				<div class="flex flex-wrap gap-8 items-center mb-20">
 
-					<div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
-
-						<div class="p-10 border border-gray-200 dark:border-gray-700 rounded-[13px] bg-gray-50 dark:bg-gray-800">
-							<p class="text-gray-700 dark:text-gray-300 mb-4">
-								We at algova are dedicated to helping you earn consistently and generate a substantial income using the stock exchange.
-							</p>
-							<p class="text-gray-700 dark:text-gray-300 mb-4">
-								Consider algova as a earning solution for your side income or a daily livelyhood too. We work tirelessly to ensure that you get the opportunity to grow your wealth and enjoy a steady and reliable income.
-							</p>
-							<p class="text-gray-700 dark:text-gray-300 mb-4">
-								Achieve financial success with minimal investment and NO stock trading knowldge.
-							</p>
-							<p class="text-gray-700 dark:text-gray-300 mb-4">
-								All the magical trading takes place using Algo Trading technology. <a class="scrollto text-algova-primary dark:text-blue-400 hover:underline" href="index.html#values">Read more</a>
-							</p>
-						</div>
-
-					</div>
-
-					<div class="w-full md:w-5/12 lg:w-5/12 xl:w-5/12 flex items-center justify-center mt-8 md:mt-0" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/relaxed.png" class="w-full max-w-full h-auto">
-					</div>
-
-				</div>
-
-
-				<div class="flex flex-wrap mt-12 gap-4">
-
-					<div class="w-full md:w-full lg:w-4/12" data-aos="fade-up" data-aos-delay="200">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Reliable Income Source</h3>
-							<p class="text-gray-700 dark:text-gray-300">We will help ypu establish reliable part time income source. So you always have reliable financial companion.</p>
+					<div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 flex flex-col justify-center">
+						<div class="relative group">
+							<div class="absolute -inset-1 bg-gradient-to-r from-algova-primary/20 to-algova-secondary/20 dark:from-blue-400/20 dark:to-blue-500/20 rounded-2xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+							<div class="relative p-8 lg:p-10 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+								<div class="space-y-4">
+									<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+										We at <span class="font-bold text-algova-primary dark:text-blue-400">Algova</span> are dedicated to helping you earn consistently and generate a substantial income using the stock exchange.
+									</p>
+									<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+										Consider Algova as an earning solution for your side income or daily livelihood. We work tirelessly to ensure that you get the opportunity to grow your wealth and enjoy a steady and reliable income.
+									</p>
+									<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+										Achieve financial success with <span class="font-semibold text-algova-primary dark:text-blue-400">minimal investment</span> and <span class="font-semibold text-algova-primary dark:text-blue-400">NO stock trading knowledge</span> required.
+									</p>
+									<p class="text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
+										All the magical trading takes place using <a class="scrollto font-semibold text-algova-primary dark:text-blue-400 hover:underline decoration-2" href="index.html#values">Algo Trading technology</a>.
+									</p>
+								</div>
+							</div>
 						</div>
 					</div>
 
-					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="400">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Made For Eeveryone</h3>
-							<p class="text-gray-700 dark:text-gray-300">We serve each customer with same care and love, We handle and offer services from small individual investor to large corporate clients too.</p>
-						</div>
-					</div>
-
-					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="600">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Transparent Operations</h3>
-							<p class="text-gray-700 dark:text-gray-300">Transparent Operations ensure all trading activities and decisions are open and clear to our clients, fostering trust at the highest level of integrity and accountability.</p>
+					<div class="w-full md:w-5/12 lg:w-5/12 xl:w-5/12 flex items-center justify-center mt-8 md:mt-0">
+						<div class="relative">
+							<div class="absolute inset-0 bg-gradient-to-r from-algova-primary/20 to-algova-secondary/20 dark:from-blue-400/20 dark:to-blue-500/20 rounded-full blur-2xl scale-110"></div>
+							<img src="static/website/img/relaxed.png" class="relative w-full max-w-full h-auto transform transition-transform duration-700 hover:scale-105">
 						</div>
 					</div>
 
 				</div>
 
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
+							<div class="relative">
+								<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 flex items-center justify-center mb-6 shadow-lg">
+									<i class='bx bx-trending-up text-3xl text-white'></i>
+								</div>
+								<h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Reliable Income Source</h3>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">We will help you establish a reliable part-time income source. So you always have a reliable financial companion.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
+							<div class="relative">
+								<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 flex items-center justify-center mb-6 shadow-lg">
+									<i class='bx bx-group text-3xl text-white'></i>
+								</div>
+								<h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Made For Everyone</h3>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">We serve each customer with the same care and love. We handle and offer services from small individual investors to large corporate clients.</p>
+							</div>
+						</div>
+					</div>
+
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
+							<div class="relative">
+								<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 flex items-center justify-center mb-6 shadow-lg">
+									<i class='bx bx-shield-check text-3xl text-white'></i>
+								</div>
+								<h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Transparent Operations</h3>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Transparent operations ensure all trading activities and decisions are open and clear to our clients, fostering trust at the highest level.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
 
 			</div>
 		</section>
@@ -296,12 +340,15 @@
 		</div>
 
 
-		<section id="features" class="features py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="features" class="features py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Why Trust Algova?</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">People trust Algova, Find out why you should too!</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Why Choose Us</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Why Trust Algova?</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">People trust Algova, Find out why you should too!</p>
 				</header>
 
 				<div class="flex flex-wrap">
@@ -309,52 +356,76 @@
 					<div class="w-full lg:w-8/12 mt-12 lg:mt-0 flex">
 						<div class="flex flex-wrap self-center gap-4">
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class='bx bxl-react text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Trust and Transparency Environment</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class='bx bxl-react text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Trust and Transparency Environment</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class='bx bx-vector text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Fully Automated Platform</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class='bx bx-vector text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Fully Automated Platform</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class='bx bxl-sketch text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Award Winning Research Team</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class='bx bxl-sketch text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Award Winning Research Team</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class='bx bxs-user-voice text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Dedicated RM Support</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class='bx bxs-user-voice text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Dedicated RM Support</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class='bx bx-paper-plane text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Paper Less Account Opening</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class='bx bx-paper-plane text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Paper Less Account Opening</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class='bx bx-support text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Prompt Helpdesk</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class='bx bx-support text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Prompt Helpdesk</h3>
+									</div>
 								</div>
 							</div>
 
 						</div>
 					</div>
 
-					<div class="w-full lg:w-4/12 flex items-center justify-center mt-8 lg:mt-0" data-aos="zoom-out" data-aos-delay="200">
+					<div class="w-full lg:w-4/12 flex items-center justify-center mt-8 lg:mt-0">
 						<img src="static/website/img/trust.png" class="w-full max-w-full h-auto">
 					</div>
 
@@ -363,26 +434,32 @@
 
 				<div class="flex flex-wrap mt-12">
 
-					<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center" data-aos="zoom-out" data-aos-delay="200">
+					<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center">
 						<img src="static/website/img/handshake.png" class="w-full max-w-full h-auto p-4">
 					</div>
 
 					<div class="w-full md:w-8/12 lg:w-8/12 xl:w-8/12 flex mt-8 md:mt-0">
-						<div class="flex flex-wrap w-full">
+						<div class="flex flex-wrap w-full space-y-6">
 
-							<div class="w-full icon-box mt-3" data-aos="fade-up">
-								<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Empowering Your Financial Journey with Algova</h4>
-								<p class="text-gray-700 dark:text-gray-300">Embark on a transformative financial journey with Algova, where your trust is rewarded with remarkable wealth growth opportunities. Our commitment to utilizing advanced Algo Trading technology sets us apart, enabling you to harness the power of the stock exchange for consistent earnings. Whether you're looking for a side income or a primary livelihood, Algova is designed to cater to both novices and seasoned investors alike.</p>
+							<div class="w-full group">
+								<div class="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<h4 class="text-2xl font-bold text-algova-primary dark:text-blue-400 mb-4">Empowering Your Financial Journey with Algova</h4>
+									<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">Embark on a transformative financial journey with Algova, where your trust is rewarded with remarkable wealth growth opportunities. Our commitment to utilizing advanced Algo Trading technology sets us apart, enabling you to harness the power of the stock exchange for consistent earnings. Whether you're looking for a side income or a primary livelihood, Algova is designed to cater to both novices and seasoned investors alike.</p>
+								</div>
 							</div>
 
-							<div class="w-full icon-box mt-3" data-aos="fade-up">
-								<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">A Reliable Partner for Steady Income</h4>
-								<p class="text-gray-700 dark:text-gray-300">At Algova, we understand the value of trust and reliability in financial investments. Our dedicated team works tirelessly to ensure that our Algo Trading strategies are finely tuned to the dynamic nature of the stock market, offering you a steady and reliable source of income. Our technology-driven approach minimizes risks and maximizes returns, allowing you to enjoy a worry-free investment experience.</p>
+							<div class="w-full group">
+								<div class="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<h4 class="text-2xl font-bold text-algova-primary dark:text-blue-400 mb-4">A Reliable Partner for Steady Income</h4>
+									<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">At Algova, we understand the value of trust and reliability in financial investments. Our dedicated team works tirelessly to ensure that our Algo Trading strategies are finely tuned to the dynamic nature of the stock market, offering you a steady and reliable source of income. Our technology-driven approach minimizes risks and maximizes returns, allowing you to enjoy a worry-free investment experience.</p>
+								</div>
 							</div>
 
-							<div class="w-full icon-box mt-3" data-aos="fade-up">
-								<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Innovative Technology, Minimal Effort</h4>
-								<p class="text-gray-700 dark:text-gray-300">Choosing Algova means choosing innovation and ease. Our cutting-edge Algo Trading technology does the heavy lifting for you, analyzing market trends and executing trades at optimal times to ensure the best possible outcomes. This magical trading process requires no effort on your part, making it the perfect solution for those without stock trading knowledge or those who cannot dedicate time to market analysis.</p>
+							<div class="w-full group">
+								<div class="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<h4 class="text-2xl font-bold text-algova-primary dark:text-blue-400 mb-4">Innovative Technology, Minimal Effort</h4>
+									<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">Choosing Algova means choosing innovation and ease. Our cutting-edge Algo Trading technology does the heavy lifting for you, analyzing market trends and executing trades at optimal times to ensure the best possible outcomes. This magical trading process requires no effort on your part, making it the perfect solution for those without stock trading knowledge or those who cannot dedicate time to market analysis.</p>
+								</div>
 							</div>
 
 						</div>
@@ -400,46 +477,67 @@
 
 
 
-		<section id="values" class="values py-16 overflow-hidden">
+		<section id="values" class="values py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-800/50 dark:to-gray-900">
 
-			<div class="container mx-auto px-4" data-aos="fade-up">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Algo Trading</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">What is Algo Trading and its Benefits</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Technology</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Algo Trading</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">What is Algo Trading and its Benefits</p>
 				</header>
 
-				<div class="flex flex-wrap">
-					<div class="w-full text-center mb-4" data-aos="fade-up">
-						<p class="text-gray-700 dark:text-gray-300 mb-4">
-							Algo Trading, or Algorithmic Trading, revolutionizes investment strategies by using sophisticated algorithms to execute trades at unparalleled speed and efficiency.
+				<div class="max-w-4xl mx-auto mb-12">
+					<div class="p-8 lg:p-10 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+						<p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-center">
+							Algo Trading, or <span class="font-semibold text-algova-primary dark:text-blue-400">Algorithmic Trading</span>, revolutionizes investment strategies by using sophisticated algorithms to execute trades at unparalleled speed and efficiency.
 						</p>
-						<p class="text-gray-700 dark:text-gray-300 mb-4">
-							This technology-driven approach minimizes human error and maximizes profit potential, making it an ideal solution for investors seeking to leverage market trends without the need for constant monitoring. Embrace the future of trading with Algo Trading, where precision, speed, and strategic automation unlock new realms of financial opportunity.
+						<p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed text-center">
+							This technology-driven approach minimizes human error and maximizes profit potential, making it an ideal solution for investors seeking to leverage market trends without the need for constant monitoring.
 						</p>
 					</div>
+				</div>
 
-					<div class="w-full md:w-full lg:w-4/12" data-aos="fade-up" data-aos-delay="200">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<img src="static/website/img/rocket.png" class="w-3/4 mx-auto p-8 lg:p-12 transition-transform duration-500 scale-90 hover:scale-100">
-							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Efficient and Fast</h3>
-							<p class="text-gray-700 dark:text-gray-300">algo trading enables efficient and fast execution of trades, taking advantage of market opportunities and minimizing the impact of human emotions or delays.</p>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
+
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
+							<div class="relative text-center">
+								<div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+									<img src="static/website/img/rocket.png" class="w-16 h-16 object-contain transition-transform duration-500 group-hover:scale-110">
+								</div>
+								<h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Efficient and Fast</h3>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algo trading enables efficient and fast execution of trades, taking advantage of market opportunities and minimizing the impact of human emotions or delays.</p>
+							</div>
 						</div>
 					</div>
 
-					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="400">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<img src="static/website/img/accuracy.png" class="w-3/4 mx-auto p-8 lg:p-12 transition-transform duration-500 scale-90 hover:scale-100">
-							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Increased Accuracy</h3>
-							<p class="text-gray-700 dark:text-gray-300">algo trading eliminates the potential for human errors in manual trading, ensuring precise and accurate trade execution based on predefined algorithms.</p>
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
+							<div class="relative text-center">
+								<div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+									<img src="static/website/img/accuracy.png" class="w-16 h-16 object-contain transition-transform duration-500 group-hover:scale-110">
+								</div>
+								<h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Increased Accuracy</h3>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algo trading eliminates the potential for human errors in manual trading, ensuring precise and accurate trade execution based on predefined algorithms.</p>
+							</div>
 						</div>
 					</div>
 
-					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="600">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<img src="static/website/img/risk.png" class="w-3/4 mx-auto p-8 lg:p-12 transition-transform duration-500 scale-90 hover:scale-100">
-							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Diversification and Risk Management</h3>
-							<p class="text-gray-700 dark:text-gray-300">algo trading allows for diversification across multiple strategies, markets, and instruments, reducing risk and enhancing the overall portfolio performance.</p>
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
+							<div class="relative text-center">
+								<div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+									<img src="static/website/img/risk.png" class="w-16 h-16 object-contain transition-transform duration-500 group-hover:scale-110">
+								</div>
+								<h3 class="text-2xl font-bold mb-4 text-gray-900 dark:text-white">Diversification and Risk Management</h3>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algo trading allows for diversification across multiple strategies, markets, and instruments, reducing risk and enhancing the overall portfolio performance.</p>
+							</div>
 						</div>
 					</div>
 
@@ -450,68 +548,95 @@
 
 
 
-		<section id="features" class="features py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="features" class="features py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-800/50 dark:to-gray-900">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Taking Advantages Of Algo Trading</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is build around technology of algo trading</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Advantages</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Taking Advantages Of Algo Trading</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Algova is built around technology of algo trading</p>
 				</header>
 
 				<div class="flex flex-wrap">
 
-					<div class="w-full text-center mb-4" data-aos="fade-up">
+					<div class="w-full text-center mb-4">
 						<p class="text-gray-700 dark:text-gray-300">
 							Algo Trading offers the definitive edge in financial markets, combining high-speed trade execution with advanced analytics to reduce risks and enhance profitability. Experience the advantages of precision, efficiency, and automated strategy optimization that transform investment outcomes.
 						</p>
 					</div>
 
-					<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center mb-8 md:mb-0" data-aos="zoom-out" data-aos-delay="200">
+					<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center mb-8 md:mb-0">
 						<img src="static/website/img/trading.png" class="w-full max-w-full h-auto">
 					</div>
 
 					<div class="w-full md:w-8/12 lg:w-8/12 mt-12 md:mt-0 flex">
 						<div class="flex flex-wrap self-center gap-4 w-full">
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Consistency</h3>
+									<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Consistency</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="300">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Backtesting and Optimization</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Backtesting and Optimization</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="400">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Time-saving</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Time-saving</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="500">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Improved Order Placement</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Improved Order Placement</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="600">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Enhanced Market Monitoring</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Enhanced Market Monitoring</h3>
+									</div>
 								</div>
 							</div>
 
-							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="700">
-								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
-									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
-									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Risk Control</h3>
+							<div class="w-full md:w-6/12">
+								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+									<div class="flex items-center gap-4">
+										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+										</div>
+										<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Risk Control</h3>
+									</div>
 								</div>
 							</div>
 
@@ -523,65 +648,67 @@
 		</section>
 
 
-		<section id="features" class="features py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="features" class="features py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
+			<div class="container mx-auto px-4">
 
-				<div class="flex flex-wrap feature-icons" data-aos="fade-up">
+				<div class="flex flex-wrap feature-icons">
 
-					<header class="section-header text-center pb-10 w-full">
-						<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Why Trust Algova</h2>
-						<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is here for you and for everyone around you</p>
+					<header class="section-header text-center pb-16 w-full">
+						<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+							<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Trust & Reliability</span>
+						</div>
+						<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Why Trust Algova</h2>
+						<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Algova is here for you and for everyone around you</p>
 					</header>
 
 					<div class="flex flex-wrap w-full">
 
-						<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center" data-aos="zoom-out" data-aos-delay="200">
+						<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center">
 							<img src="static/website/img/trust_algova.png" class="w-full max-w-full h-auto p-4">
 						</div>
 
 						<div class="w-full md:w-8/12 lg:w-8/12 xl:w-8/12 flex mt-8 md:mt-0">
-							<div class="flex flex-wrap self-center gap-4 w-full">
+							<div class="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
 
-								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up">
-									<div>
-										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Intense Research</h4>
-										<p class="text-gray-700 dark:text-gray-300">Algo trading strategies and decisions are supported by thorough and comprehensive research, ensuring a solid foundation for trading success.</p>
+								<div class="group">
+									<div class="relative h-full p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-3">Intense Research</h4>
+										<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algo trading strategies and decisions are supported by thorough and comprehensive research, ensuring a solid foundation for trading success.</p>
 									</div>
 								</div>
 
-								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="100">
-									<div>
-										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Optimal Strategies</h4>
-										<p class="text-gray-700 dark:text-gray-300">Algo trading platforms provide access to carefully designed and fine-tuned trading strategies to maximize profitability and minimize risk.</p>
+								<div class="group">
+									<div class="relative h-full p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-3">Optimal Strategies</h4>
+										<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algo trading platforms provide access to carefully designed and fine-tuned trading strategies to maximize profitability and minimize risk.</p>
 									</div>
 								</div>
 
-								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="200">
-									<div>
-										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Risk Management</h4>
-										<p class="text-gray-700 dark:text-gray-300">We ensured to use combination of risk management tools that will provid you with a sense of security and confidence in investing with us, ensuring that we can protect your capital and maintain a sustainable trading strategy.</p>
+								<div class="group">
+									<div class="relative h-full p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-3">Risk Management</h4>
+										<p class="text-gray-600 dark:text-gray-400 leading-relaxed">We ensure to use a combination of risk management tools that will provide you with a sense of security and confidence in investing with us, ensuring that we can protect your capital and maintain a sustainable trading strategy.</p>
 									</div>
 								</div>
 
-								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="300">
-									<div>
-										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Backtesting</h4>
-										<p class="text-gray-700 dark:text-gray-300">Algova has built in one of best backtesting (Shadow trading) backtesting tool.<br>
-										Evaluation of trading strategies by simulating them with historical data, providing valuable insights into their potential performance.</p>
+								<div class="group">
+									<div class="relative h-full p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-3">Backtesting</h4>
+										<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algova has built one of the best backtesting (Shadow trading) tools. Evaluation of trading strategies by simulating them with historical data, providing valuable insights into their potential performance.</p>
 									</div>
 								</div>
 
-								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="400">
-									<div>
-										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">No Strategy Selection</h4>
-										<p class="text-gray-700 dark:text-gray-300">We handle the strategy selection for you - we have thoroughly researched, tested, and implemented the best strategies, which we continuously update for optimal performance.</p>
+								<div class="group">
+									<div class="relative h-full p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-3">No Strategy Selection</h4>
+										<p class="text-gray-600 dark:text-gray-400 leading-relaxed">We handle the strategy selection for you - we have thoroughly researched, tested, and implemented the best strategies, which we continuously update for optimal performance.</p>
 									</div>
 								</div>
 
-								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="500">
-									<div>
-										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Complete Transparency</h4>
-										<p class="text-gray-700 dark:text-gray-300">We provide users with easy access to all relevant data, including trade history, strategy performance, account performance, and detailed reports on a daily, weekly, and monthly basis in a user-friendly format.</p>
+								<div class="group">
+									<div class="relative h-full p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-3">Complete Transparency</h4>
+										<p class="text-gray-600 dark:text-gray-400 leading-relaxed">We provide users with easy access to all relevant data, including trade history, strategy performance, account performance, and detailed reports on a daily, weekly, and monthly basis in a user-friendly format.</p>
 									</div>
 								</div>
 
@@ -597,37 +724,55 @@
 
 
 
-		<section id="services" class="services py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="services" class="services py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Services</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">The effortless magical world of Algova</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Our Services</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Services</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">The effortless magical world of Algova</p>
 				</header>
 
-				<div class="flex flex-wrap gap-4">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
-					<div class="w-full md:w-6/12 lg:w-4/12" data-aos="fade-up" data-aos-delay="200">
-						<div class="shadow-lg border border-gray-200 dark:border-gray-700 h-full p-12 lg:p-8 text-center transition-all duration-300 rounded-3xl border-b-[3px] border-[#2db6fa] bg-white dark:bg-gray-800 hover:bg-algova-primary hover:text-white dark:hover:bg-blue-600">
-							<i class="bx bxs-bar-chart-alt-2 text-7xl p-12 lg:p-8 rounded mb-6 inline-block leading-none transition-all duration-300 text-[#2db6fa]"></i>
-							<h4 class="mb-4 font-bold text-gray-900 dark:text-gray-100">Best Trading Engine</h4>
-							<p class="text-gray-700 dark:text-gray-300">A powerful algo trading engine built on distributed architecture with multiple data providers around the world in Stocks. So you get the best possible automated trading experience.</p>
+					<div class="group">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-[#2db6fa]/20 dark:border-[#2db6fa]/30 transition-all duration-500 hover:border-[#2db6fa] dark:hover:border-[#2db6fa] hover:shadow-2xl hover:shadow-[#2db6fa]/20 dark:hover:shadow-[#2db6fa]/20 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#2db6fa]/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
+							<div class="relative text-center">
+								<div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#2db6fa]/10 to-[#2db6fa]/5 dark:from-[#2db6fa]/20 dark:to-[#2db6fa]/10 flex items-center justify-center group-hover:from-[#2db6fa] group-hover:to-[#2db6fa]/80 transition-all duration-300">
+									<i class="bx bxs-bar-chart-alt-2 text-5xl text-[#2db6fa] group-hover:text-white transition-colors duration-300"></i>
+								</div>
+								<h4 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Best Trading Engine</h4>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">A powerful algo trading engine built on distributed architecture with multiple data providers around the world in Stocks. So you get the best possible automated trading experience.</p>
+							</div>
 						</div>
 					</div>
 
-					<div class="w-full md:w-6/12 lg:w-4/12" data-aos="fade-up" data-aos-delay="300">
-						<div class="shadow-lg border border-gray-200 dark:border-gray-700 h-full p-12 lg:p-8 text-center transition-all duration-300 rounded-3xl border-b-[3px] border-[#f68c09] bg-white dark:bg-gray-800 hover:bg-algova-primary hover:text-white dark:hover:bg-blue-600">
-							<i class="bx bxs-magic-wand text-7xl p-12 lg:p-8 rounded mb-6 inline-block leading-none transition-all duration-300 text-[#f68c09]"></i>
-							<h4 class="mb-4 font-bold text-gray-900 dark:text-gray-100">Algo Trading Magic</h4>
-							<p class="text-gray-700 dark:text-gray-300">Algorithms that are designed to execute trades based on predefined criteria, such as price movements or market trends, without the need for human intervention.</p>
+					<div class="group">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-[#f68c09]/20 dark:border-[#f68c09]/30 transition-all duration-500 hover:border-[#f68c09] dark:hover:border-[#f68c09] hover:shadow-2xl hover:shadow-[#f68c09]/20 dark:hover:shadow-[#f68c09]/20 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#f68c09]/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
+							<div class="relative text-center">
+								<div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#f68c09]/10 to-[#f68c09]/5 dark:from-[#f68c09]/20 dark:to-[#f68c09]/10 flex items-center justify-center group-hover:from-[#f68c09] group-hover:to-[#f68c09]/80 transition-all duration-300">
+									<i class="bx bxs-magic-wand text-5xl text-[#f68c09] group-hover:text-white transition-colors duration-300"></i>
+								</div>
+								<h4 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Algo Trading Magic</h4>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Algorithms that are designed to execute trades based on predefined criteria, such as price movements or market trends, without the need for human intervention.</p>
+							</div>
 						</div>
 					</div>
 
-					<div class="w-full md:w-6/12 lg:w-4/12" data-aos="fade-up" data-aos-delay="400">
-						<div class="shadow-lg border border-gray-200 dark:border-gray-700 h-full p-12 lg:p-8 text-center transition-all duration-300 rounded-3xl border-b-[3px] border-[#08da4e] bg-white dark:bg-gray-800 hover:bg-algova-primary hover:text-white dark:hover:bg-blue-600">
-							<i class="bx bxs-analyse text-7xl p-12 lg:p-8 rounded mb-6 inline-block leading-none transition-all duration-300 text-[#08da4e]"></i>
-							<h4 class="mb-4 font-bold text-gray-900 dark:text-gray-100">Rigorous Backtesting</h4>
-							<p class="text-gray-700 dark:text-gray-300">Rigorous backtesting is a critical process in finance where trading strategies are tested using historical data to determine their viability and effectiveness.</p>
+					<div class="group">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-[#08da4e]/20 dark:border-[#08da4e]/30 transition-all duration-500 hover:border-[#08da4e] dark:hover:border-[#08da4e] hover:shadow-2xl hover:shadow-[#08da4e]/20 dark:hover:shadow-[#08da4e]/20 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#08da4e]/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
+							<div class="relative text-center">
+								<div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#08da4e]/10 to-[#08da4e]/5 dark:from-[#08da4e]/20 dark:to-[#08da4e]/10 flex items-center justify-center group-hover:from-[#08da4e] group-hover:to-[#08da4e]/80 transition-all duration-300">
+									<i class="bx bxs-analyse text-5xl text-[#08da4e] group-hover:text-white transition-colors duration-300"></i>
+								</div>
+								<h4 class="mb-4 text-xl font-bold text-gray-900 dark:text-white">Rigorous Backtesting</h4>
+								<p class="text-gray-600 dark:text-gray-400 leading-relaxed">Rigorous backtesting is a critical process in finance where trading strategies are tested using historical data to determine their viability and effectiveness.</p>
+							</div>
 						</div>
 					</div>
 
@@ -638,46 +783,62 @@
 
 
 
-		<section id="pricing" class="pricing py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="pricing" class="pricing py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-gray-50/50 to-white dark:from-gray-800/50 dark:to-gray-900">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Pricing</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is here for you and everyone around you</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Pricing Plans</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Pricing</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Algova is here for you and everyone around you</p>
 				</header>
 
-				<div class="flex flex-wrap gap-4" data-aos="fade-left">
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 max-w-5xl mx-auto">
 
-					<div class="w-full md:w-6/12 lg:w-6/12 xl:w-6/12" data-aos="zoom-in" data-aos-delay="100">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800 text-cyan-500 dark:text-cyan-400">
-							<h3 class="text-lg font-bold mb-4 text-cyan-500 dark:text-cyan-400">USER ACCOUNT</h3>
-							<img src="static/website/img/bike.png" class="w-full max-w-full h-auto mx-auto">
-							<ul class="list-none p-0 mt-6 text-left">
-								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Free Investment <span class="text-gray-500 dark:text-gray-400">(upto 10,000 ₹ Investment)</span></li>
-								<li class="mb-3">
-									<p class="mb-0 text-gray-700 dark:text-gray-300">0 Coin &nbsp; = &nbsp; 1 Trade (Invs. below 10,000 Rs.)</p>
-									<p class="mb-0 text-gray-700 dark:text-gray-300">5 Coins &nbsp; = &nbsp; 1 Trade (Invs. above 10,000 Rs.)</p>
-								</li>
-								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Daily, Weekly, Monthly Reports</li>
-								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Details about current strategy</li>
-								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Chat Support</li>
-							</ul>
+					<div class="group">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-cyan-500/20 dark:border-cyan-400/30 transition-all duration-500 hover:border-cyan-500 dark:hover:border-cyan-400 hover:shadow-2xl hover:shadow-cyan-500/20 dark:hover:shadow-cyan-400/20 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-500/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
+							<div class="relative text-center">
+								<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-cyan-500/10 dark:bg-cyan-400/20 border border-cyan-500/20 dark:border-cyan-400/30 mb-6">
+									<span class="text-sm font-bold text-cyan-500 dark:text-cyan-400 uppercase">USER ACCOUNT</span>
+								</div>
+								<div class="w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-cyan-500/5 dark:from-cyan-400/20 dark:to-cyan-400/10 flex items-center justify-center group-hover:from-cyan-500 group-hover:to-cyan-400 transition-all duration-300">
+									<img src="static/website/img/bike.png" class="w-24 h-24 object-contain transition-transform duration-500 group-hover:scale-110">
+								</div>
+								<ul class="list-none p-0 mt-6 text-left space-y-3">
+									<li class="flex items-start"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Free Investment <span class="text-gray-500 dark:text-gray-400">(upto 10,000 ₹ Investment)</span></span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2 mt-1 text-xl"></i> <div class="text-gray-700 dark:text-gray-300"><p class="mb-0">0 Coin = 1 Trade (Invs. below 10,000 Rs.)</p><p class="mb-0">5 Coins = 1 Trade (Invs. above 10,000 Rs.)</p></div></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Daily, Weekly, Monthly Reports</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Details about current strategy</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Chat Support</span></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 
-					<div class="w-full md:w-6/12 lg:w-6/12 xl:w-6/12" data-aos="zoom-in" data-aos-delay="100">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800 text-algova-primary dark:text-blue-400">
-							<h3 class="text-lg font-bold mb-4 text-algova-primary dark:text-blue-400">BUSINESS ACCOUNT</h3>
-							<img src="static/website/img/rocket.png" class="w-2/5 mx-auto">
-							<ul class="list-none p-0 mt-6 text-left">
-								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Minimum investment 10,000 ₹</li>
-								<li class="mb-3"><p class="mb-0 text-gray-700 dark:text-gray-300">10 Coins &nbsp; = &nbsp; 1 Profitable Trade</p></li>
-								<li class="mb-3"><i class="bx bx-check-double bx-flashing text-algova-primary dark:text-blue-400 mr-2"></i> Only pay for profitable trades</li>
-								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Daily, Weekly, Monthly Reports</li>
-								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Receive reports on email</li>
-								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Details about current strategy</li>
-								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Live Chat Support</li>
-							</ul>
+					<div class="group relative">
+						<div class="absolute -inset-1 bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 rounded-3xl blur opacity-75 group-hover:opacity-100 transition duration-1000"></div>
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/90 dark:bg-gray-800/90 backdrop-blur-sm border-2 border-algova-primary/30 dark:border-blue-400/30 transition-all duration-500 hover:shadow-2xl hover:shadow-algova-primary/30 dark:hover:shadow-blue-400/30 hover:-translate-y-2">
+							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-algova-primary/20 to-algova-secondary/20 dark:from-blue-500/20 dark:to-blue-600/20 rounded-bl-3xl rounded-tr-3xl"></div>
+							<div class="relative text-center">
+								<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 text-white mb-6">
+									<span class="text-sm font-bold uppercase">BUSINESS ACCOUNT</span>
+									<span class="px-2 py-0.5 bg-white/20 rounded-full text-xs">POPULAR</span>
+								</div>
+								<div class="w-32 h-32 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/20 to-algova-secondary/20 dark:from-blue-500/20 dark:to-blue-600/20 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+									<img src="static/website/img/rocket.png" class="w-24 h-24 object-contain transition-transform duration-500 group-hover:scale-110">
+								</div>
+								<ul class="list-none p-0 mt-6 text-left space-y-3">
+									<li class="flex items-start"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Minimum investment 10,000 ₹</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">10 Coins = 1 Profitable Trade</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double bx-flashing text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300 font-semibold">Only pay for profitable trades</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Daily, Weekly, Monthly Reports</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Receive reports on email</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Details about current strategy</span></li>
+									<li class="flex items-start"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2 mt-1 text-xl"></i> <span class="text-gray-700 dark:text-gray-300">Live Chat Support</span></li>
+								</ul>
+							</div>
 						</div>
 					</div>
 
@@ -705,41 +866,52 @@
 		</div>
 
 
-		<section id="contact" class="contact py-16 overflow-hidden">
-			<div class="container mx-auto px-4" data-aos="fade-up">
+		<section id="contact" class="contact py-24 lg:py-32 overflow-hidden bg-gradient-to-b from-white to-gray-50/50 dark:from-gray-900 dark:to-gray-800/50">
+			<div class="container mx-auto px-4">
 
-				<header class="section-header text-center pb-10">
-					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Contact</h2>
-					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Have a question? Here to help.</p>
+				<header class="section-header text-center pb-16">
+					<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-algova-primary/10 dark:bg-blue-400/20 border border-algova-primary/20 dark:border-blue-400/30 mb-4">
+						<span class="text-sm font-semibold text-algova-primary dark:text-blue-400 uppercase tracking-wider">Get In Touch</span>
+					</div>
+					<h2 class="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-4 bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-gray-300 bg-clip-text text-transparent">Contact</h2>
+					<p class="text-xl md:text-2xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto">Have a question? Here to help.</p>
 				</header>
 
-				<div class="flex flex-wrap justify-center gap-4">
-					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-phone bx-md"></i></h3>
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2">Call Us</h3>
-							<a href="tel:+918806444444" class="text-teal-600 dark:text-teal-400 hover:underline">+91 8806444444</a>
+				<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+							<div class="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+								<i class="bx bx-phone text-3xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+							</div>
+							<h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white text-center">Call Us</h3>
+							<a href="tel:+918806444444" class="block text-center text-teal-600 dark:text-teal-400 hover:text-algova-primary dark:hover:text-blue-400 font-medium transition-colors duration-300">+91 8806444444</a>
 						</div>
 					</div>
-					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-envelope bx-md"></i></h3>
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2">Email Us</h3>
-							<a href="mailto:support@algova.com?subject=Support%3A%20Hello%20Team%20I%20Have%20a%20Doubt&body=Hello%20Team%2C%0AI%20have%20a%20doubt%2C%20I%20need%20you%20help.%0A%0ARegards." class="text-teal-600 dark:text-teal-400 hover:underline">support@Algova.com</a>
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+							<div class="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+								<i class="bx bx-envelope text-3xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+							</div>
+							<h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white text-center">Email Us</h3>
+							<a href="mailto:support@algova.com?subject=Support%3A%20Hello%20Team%20I%20Have%20a%20Doubt&body=Hello%20Team%2C%0AI%20have%20a%20doubt%2C%20I%20need%20you%20help.%0A%0ARegards." class="block text-center text-teal-600 dark:text-teal-400 hover:text-algova-primary dark:hover:text-blue-400 font-medium transition-colors duration-300 break-all">support@Algova.com</a>
 						</div>
 					</div>
-					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-question-mark bx-md"></i></h3>
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2">FAQ's</h3>
-							<a href="faqs.html" class="text-teal-600 dark:text-teal-400 hover:underline">FAQ's</a>
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+							<div class="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+								<i class="bx bx-question-mark text-3xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+							</div>
+							<h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white text-center">FAQ's</h3>
+							<a href="faqs.html" class="block text-center text-teal-600 dark:text-teal-400 hover:text-algova-primary dark:hover:text-blue-400 font-medium transition-colors duration-300">View FAQ's</a>
 						</div>
 					</div>
-					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
-						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-chat bx-md"></i></h3>
-							<h3 class="text-algova-primary dark:text-blue-400 mb-2">Helpdesk</h3>
-							<a href="user/helpdesk/tickets" class="text-teal-600 dark:text-teal-400 hover:underline">Ask on helpdesk</a>
+					<div class="group">
+						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+							<div class="w-16 h-16 mx-auto mb-6 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
+								<i class="bx bx-chat text-3xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
+							</div>
+							<h3 class="text-xl font-bold mb-3 text-gray-900 dark:text-white text-center">Helpdesk</h3>
+							<a href="user/helpdesk/tickets" class="block text-center text-teal-600 dark:text-teal-400 hover:text-algova-primary dark:hover:text-blue-400 font-medium transition-colors duration-300">Ask on helpdesk</a>
 						</div>
 					</div>
 				</div>
@@ -876,7 +1048,6 @@
 </a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>

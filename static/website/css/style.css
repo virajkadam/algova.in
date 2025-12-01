@@ -28,7 +28,8 @@ a:hover {
 
 
 
-.navbar a,
+/* Color rules - now handled by Tailwind utilities */
+/* .navbar a,
 .navbar a:focus,
 .section-header h2,
 .box h3,
@@ -42,7 +43,7 @@ a:hover {
 .nav-link:focus,
 .nav-link:hover {
 	color:var(--bs-primary);
-}
+} */
 
 .contact .box a{
 	color: var(--bs-teal);
@@ -52,12 +53,14 @@ a:hover {
 	color:#9e9e9e!important
 }
 
-section {
+/* Section styles - now handled by Tailwind utilities */
+/* section {
 	padding:60px 0;
 	overflow:hidden;
-}
+} */
 
-.section-header {
+/* Section header styles - now handled by Tailwind utilities */
+/* .section-header {
 	text-align:center;
 	padding-bottom:40px
 }
@@ -73,7 +76,7 @@ section {
 .section-header p {
 	margin:10px 0;
 	font-size: 1.7em;
-}
+} */
 
 @media (max-width: 768px) {
 	.section-header p {
@@ -446,7 +449,8 @@ section {
 	height:50vh!important
 }
 
-.hero {
+/* Hero styles - now handled by Tailwind utilities */
+/* .hero {
 	width:100%;
 	height:100vh;
 	border-bottom:1px solid #e1ecff;
@@ -461,12 +465,13 @@ section {
 .hero h2 {
 	margin:15px 0 0;
 	font-size:26px
-}
+} */
 
 
 
 
-@media (min-width: 1024px) {
+/* Hero media queries - now handled by Tailwind responsive utilities */
+/* @media (min-width: 1024px) {
 	.hero {
 		background-attachment:fixed
 	}
@@ -504,7 +509,7 @@ section {
 	.hero .hero-img img {
 		width:100%
 	}
-}
+} */
 
 .about .content {
 	padding:40px;
