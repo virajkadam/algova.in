@@ -88,26 +88,26 @@
 
 <body>
 
-	<header id="header" class="header fixed-top">
-		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+	<header id="header" class="header fixed top-0 left-0 right-0 z-[997] py-5 transition-all duration-500 bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800">
+		<div class="container mx-auto px-4 lg:px-8 flex items-center justify-between">
 
-			<a href="index.html" class="app-brand-link gap-2">
-				<img src="https://algova.in/static/website/algova_logo.png">
-				<h1 class="app-brand-text mt-2">
-					ALGOVA <p class="app-brand-slogan mb-0">Connect. Invest. Relax.</p>
+			<a href="index.html" class="flex items-center gap-2">
+				<img src="https://algova.in/static/website/algova_logo.png" class="w-16 mr-2.5">
+				<h1 class="text-4xl font-extrabold tracking-wide text-algova-primary dark:text-blue-400 mt-2">
+					ALGOVA <p class="text-base font-bold text-algova-primary dark:text-blue-400 mb-0">Connect. Invest. Relax.</p>
 				</h1>
-				<span class="app-brand-beta">BETA</span>
+				<span class="text-gray-500 dark:text-gray-400 text-sm relative -bottom-5">BETA</span>
 			</a>
 
-			<nav id="navbar" class="navbar">
-				<ul>
-					<li><a class="nav-link" href="index.html">Home</a></li>
-					<li><a class="nav-link" href="what_is_algova.html">What is Algova</a></li>
-					<li><a class="nav-link" href="how_it_works.html">How it Works?</a></li>
-					<li><a class="nav-link" href="contact.html">Contact</a></li>
-					<li><a><i class="bx bx-sun bx-sm" id="theme_switch"></i></a></li>
+			<nav id="navbar" class="p-0">
+				<ul class="m-0 p-0 flex list-none items-center">
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="index.html">Home</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="what_is_algova.html">What is Algova</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="how_it_works.html">How it Works?</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="contact.html">Contact</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400"><i class="bx bx-sun bx-sm" id="theme_switch"></i></a></li>
 				</ul>
-				<i class="bx bx-menu mobile-nav-toggle"></i>
+				<i class="bx bx-menu mobile-nav-toggle text-5xl cursor-pointer hidden xl:block transition-all duration-500"></i>
 			</nav>
 
 		</div>
