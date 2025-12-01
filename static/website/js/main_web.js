@@ -289,6 +289,45 @@
 		aos_init();
 	});
 
+	/**
+	 * Custom Accordion for Tailwind
+	 */
+	const initAccordion = () => {
+		const buttons = document.querySelectorAll('.accordion-button');
+		
+		buttons.forEach(button => {
+			button.addEventListener('click', function() {
+				const targetId = this.getAttribute('data-accordion-target');
+				const content = document.getElementById(targetId);
+				const icon = this.querySelector('i');
+				
+				// Close all other accordions
+				buttons.forEach(otherButton => {
+					if (otherButton !== this) {
+						const otherId = otherButton.getAttribute('data-accordion-target');
+						const otherContent = document.getElementById(otherId);
+						const otherIcon = otherButton.querySelector('i');
+						
+						otherContent.classList.add('hidden');
+						otherIcon.style.transform = 'rotate(0deg)';
+					}
+				});
+				
+				// Toggle current accordion
+				content.classList.toggle('hidden');
+				
+				// Rotate icon
+				if (content.classList.contains('hidden')) {
+					icon.style.transform = 'rotate(0deg)';
+				} else {
+					icon.style.transform = 'rotate(180deg)';
+				}
+			});
+		});
+	};
+	
+	window.addEventListener('load', initAccordion);
+
 
 })();
 
