@@ -88,34 +88,96 @@
 
 <body>
 
-	<header id="header" class="header fixed top-0 left-0 right-0 z-[997] py-5 transition-all duration-500 bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800">
-		<div class="container mx-auto px-4 lg:px-8 flex items-center justify-between">	
+	<header id="header" class="header fixed top-0 left-0 right-0 z-[997] transition-all duration-500 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg dark:shadow-gray-900/50 border-b border-gray-200/50 dark:border-gray-700/50">
+		<div class="container mx-auto px-4 lg:px-8">	
+			<div class="flex items-center justify-between h-20 lg:h-24">
 
-			<a href="index.html" class="flex items-center gap-2">
-				<img src="https://algova.in/static/website/algova_logo.png" class="w-16 mr-2.5">
-				<h1 class="text-4xl font-extrabold tracking-wide text-algova-primary dark:text-blue-400 mt-2">
-					ALGOVA <p class="text-base font-bold text-algova-primary dark:text-blue-400 mb-0">Connect. Invest. Relax.</p>
-				</h1>
-				<span class="text-gray-500 dark:text-gray-400 text-sm relative -bottom-5">BETA</span>
-			</a>
+				<a href="index.html" class="flex items-center gap-3 group transition-transform duration-300 hover:scale-105">
+					<div class="relative">
+						<img src="https://algova.in/static/website/algova_logo.png" class="w-14 h-14 lg:w-16 lg:h-16 object-contain transition-transform duration-300 group-hover:rotate-6">
+						<div class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 rounded-full animate-pulse border-2 border-white dark:border-gray-900"></div>
+					</div>
+					<div class="flex flex-col">
+						<h1 class="text-2xl lg:text-3xl font-extrabold tracking-tight text-algova-primary dark:text-blue-400 leading-tight">
+							ALGOVA
+							<span class="ml-2 text-xs lg:text-sm font-semibold px-2 py-0.5 bg-algova-primary/10 dark:bg-blue-400/20 text-algova-primary dark:text-blue-400 rounded-full">BETA</span>
+						</h1>
+						<p class="text-xs lg:text-sm font-medium text-gray-600 dark:text-gray-400 leading-tight mt-0.5">Connect. Invest. Relax.</p>
+					</div>
+				</a>
 
-			<nav id="navbar" class="p-0">
-				<ul class="m-0 p-0 flex list-none items-center">
-					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="index.html">Home</a></li>
-					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="what_is_algova.html">What is Algova</a></li>
-					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="how_it_works.html">How it Works?</a></li>
-					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="contact.html">Contact</a></li>
-					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400"><i class="bx bx-sun bx-sm" id="theme_switch"></i></a></li>
-				</ul>
-				<i class="bx bx-menu mobile-nav-toggle text-5xl cursor-pointer hidden xl:block transition-all duration-500"></i>
-			</nav>
+				<nav id="navbar" class="hidden lg:flex items-center">
+					<ul class="m-0 p-0 flex list-none items-center gap-1">
+						<li class="relative group">
+							<a class="relative flex items-center justify-center px-4 py-2.5 text-base font-medium whitespace-nowrap transition-all duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 rounded-lg hover:bg-algova-primary/5 dark:hover:bg-blue-400/10" href="index.html">
+								<span class="relative z-10">Home</span>
+								<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-algova-primary dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full"></span>
+							</a>
+						</li>
+						<li class="relative group">
+							<a class="relative flex items-center justify-center px-4 py-2.5 text-base font-medium whitespace-nowrap transition-all duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 rounded-lg hover:bg-algova-primary/5 dark:hover:bg-blue-400/10" href="what_is_algova.html">
+								<span class="relative z-10">What is Algova</span>
+								<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-algova-primary dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full"></span>
+							</a>
+						</li>
+						<li class="relative group">
+							<a class="relative flex items-center justify-center px-4 py-2.5 text-base font-medium whitespace-nowrap transition-all duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 rounded-lg hover:bg-algova-primary/5 dark:hover:bg-blue-400/10" href="how_it_works.html">
+								<span class="relative z-10">How it Works?</span>
+								<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-algova-primary dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full"></span>
+							</a>
+						</li>
+						<li class="relative group">
+							<a class="relative flex items-center justify-center px-4 py-2.5 text-base font-medium whitespace-nowrap transition-all duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 rounded-lg hover:bg-algova-primary/5 dark:hover:bg-blue-400/10" href="contact.html">
+								<span class="relative z-10">Contact</span>
+								<span class="absolute bottom-0 left-0 right-0 h-0.5 bg-algova-primary dark:bg-blue-400 scale-x-0 group-hover:scale-x-100 transition-transform duration-300 rounded-full"></span>
+							</a>
+						</li>
+						<li class="relative ml-2">
+							<button id="theme_switch" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300 shadow-sm hover:shadow-md">
+								<i class="bx bx-sun text-lg dark:hidden"></i>
+								<i class="bx bx-moon text-lg hidden dark:block"></i>
+							</button>
+						</li>
+					</ul>
+				</nav>
 
+				<div class="flex items-center gap-3 lg:hidden">
+					<button id="theme_switch" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300">
+						<i class="bx bx-sun text-lg dark:hidden"></i>
+						<i class="bx bx-moon text-lg hidden dark:block"></i>
+					</button>
+					<button id="mobile-menu-toggle" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300">
+						<i class="bx bx-menu text-2xl transition-transform duration-300"></i>
+					</button>
+				</div>
+
+			</div>
+
+			<!-- Mobile Menu -->
+			<div id="mobile-menu" class="lg:hidden hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md">
+				<nav class="container mx-auto px-4 py-4">
+					<ul class="flex flex-col gap-1">
+						<li>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="index.html">Home</a>
+						</li>
+						<li>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="what_is_algova.html">What is Algova</a>
+						</li>
+						<li>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="how_it_works.html">How it Works?</a>
+						</li>
+						<li>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="contact.html">Contact</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
 		</div>
 	</header>
 
 
 
-	<main id="main">
+	<main id="main" class="pt-20 lg:pt-24">
 
 		<section id="hero" class="hero flex items-center py-20 lg:py-32">
 			<div class="container mx-auto px-4">

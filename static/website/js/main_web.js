@@ -106,6 +106,41 @@
 	/**
 	 * Mobile nav toggle
 	 */
+	// Mobile menu toggle (new modern header)
+	on('click', '#mobile-menu-toggle', function(e) {
+		e.preventDefault()
+		let mobileMenu = select('#mobile-menu')
+		if (mobileMenu) {
+			mobileMenu.classList.toggle('hidden')
+			let icon = this.querySelector('i')
+			if (icon) {
+				if (mobileMenu.classList.contains('hidden')) {
+					icon.classList.remove('bx-x')
+					icon.classList.add('bx-menu')
+				} else {
+					icon.classList.remove('bx-menu')
+					icon.classList.add('bx-x')
+				}
+			}
+		}
+	})
+
+	// Close mobile menu when clicking on a link
+	on('click', '#mobile-menu a', function() {
+		let mobileMenu = select('#mobile-menu')
+		if (mobileMenu) {
+			mobileMenu.classList.add('hidden')
+			let toggleBtn = select('#mobile-menu-toggle')
+			if (toggleBtn) {
+				let icon = toggleBtn.querySelector('i')
+				if (icon) {
+					icon.classList.remove('bx-x')
+					icon.classList.add('bx-menu')
+				}
+			}
+		}
+	})
+
 	on('click', '.mobile-nav-toggle', function(e) {
 		select('#navbar').classList.toggle('navbar-mobile')
 		this.classList.toggle('bx-menu')
