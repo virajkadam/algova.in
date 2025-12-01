@@ -296,16 +296,23 @@ $(document).ready(function() {
 
 	const current_theme = Cookies.get('theme');
 
-	if (current_theme != null) {
-		$("body").attr("class",current_theme);
+	if (current_theme === 'dark') {
+		document.documentElement.classList.add('dark');
+		$('#theme_switch').removeClass('bx-sun').addClass('bx-loader text-algova-primary');
+	} else {
+		document.documentElement.classList.remove('dark');
+		$('#theme_switch').removeClass('bx-loader text-algova-primary').addClass('bx-sun');
 	}
 
 	$('#theme_switch').click(function() {
-		$("body").toggleClass("theme_light theme_dark");
-		$(this).toggleClass("bx-loader bx-sun");
-		$(this).toggleClass("text-primary");
-
-		let selected_theme = $('body').attr('class');
-		Cookies.set('theme',selected_theme);
+		const isDark = document.documentElement.classList.toggle('dark');
+		
+		if (isDark) {
+			$(this).removeClass('bx-sun').addClass('bx-loader text-algova-primary');
+			Cookies.set('theme', 'dark');
+		} else {
+			$(this).removeClass('bx-loader text-algova-primary').addClass('bx-sun');
+			Cookies.set('theme', 'light');
+		}
 	});
 });

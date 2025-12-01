@@ -58,19 +58,35 @@
 	<meta name="twitter:image" content="https://algova.in/static/website/algova_logo.png">
 
 
-	<link href="https://algova.in/static/website/algova_logo.png" rel="icon">
+	<link href="https://	algova.in/static/website/algova_logo.png" rel="icon">
 	<link href="https://algova.in/static/website/algova_logo.png" rel="apple-touch-icon">
 
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css">
 	<link rel="stylesheet" href="static/website/css/style.css">
 	<link rel="stylesheet" href="static/website/css/theme.css">
+	<!-- Tailwind CSS CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						'algova-primary': '#4154f1',
+						'algova-primary-hover': '#5969f3',
+						'algova-secondary': '#717ff5',
+						'algova-dark': '#012970',
+						'algova-blue': '#0b198f',
+					}
+				}
+			}
+		}
+	</script>
 </head>
 
-<body class="theme_light">
+<body>
 
 	<header id="header" class="header fixed-top">
 		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
@@ -303,7 +319,6 @@
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>

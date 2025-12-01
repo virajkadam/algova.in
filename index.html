@@ -63,35 +63,51 @@
 
 	<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200..1000&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/boxicons/2.1.0/css/boxicons.min.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.css">
 	<link rel="stylesheet" href="static/website/css/style.css">
 	<link rel="stylesheet" href="static/website/css/theme.css">
+	<!-- Tailwind CSS CDN -->
+	<script src="https://cdn.tailwindcss.com"></script>
+	<script>
+		tailwind.config = {
+			theme: {
+				extend: {
+					colors: {
+						'algova-primary': '#4154f1',
+						'algova-primary-hover': '#5969f3',
+						'algova-secondary': '#717ff5',
+						'algova-dark': '#012970',
+						'algova-blue': '#0b198f',
+					}
+				}
+			}
+		}
+	</script>
 </head>
 
-<body class="theme_light">
+<body>
 
-	<header id="header" class="header fixed-top">
-		<div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+	<header id="header" class="header fixed top-0 left-0 right-0 z-[997] py-5 transition-all duration-500 bg-white dark:bg-gray-900 shadow-sm dark:shadow-gray-800">
+		<div class="container mx-auto px-4 lg:px-8 flex items-center justify-between">	
 
-			<a href="index.html" class="app-brand-link gap-2">
-				<img src="https://algova.in/static/website/algova_logo.png">
-				<h1 class="app-brand-text mt-2">
-					ALGOVA <p class="app-brand-slogan mb-0">Connect. Invest. Relax.</p>
+			<a href="index.html" class="flex items-center gap-2">
+				<img src="https://algova.in/static/website/algova_logo.png" class="w-16 mr-2.5">
+				<h1 class="text-4xl font-extrabold tracking-wide text-algova-primary dark:text-blue-400 mt-2">
+					ALGOVA <p class="text-base font-bold text-algova-primary dark:text-blue-400 mb-0">Connect. Invest. Relax.</p>
 				</h1>
-				<span class="app-brand-beta">BETA</span>
+				<span class="text-gray-500 dark:text-gray-400 text-sm relative -bottom-5">BETA</span>
 			</a>
 
-			<nav id="navbar" class="navbar">
-				<ul>
-					<li><a class="nav-link" href="index.html">Home</a></li>
-					<li><a class="nav-link" href="what_is_algova.html">What is Algova</a></li>
-					<li><a class="nav-link" href="how_it_works.html">How it Works?</a></li>
-					<li><a class="nav-link" href="contact.html">Contact</a></li>
-					<li><a><i class="bx bx-sun bx-sm" id="theme_switch"></i></a></li>
+			<nav id="navbar" class="p-0">
+				<ul class="m-0 p-0 flex list-none items-center">
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="index.html">Home</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="what_is_algova.html">What is Algova</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="how_it_works.html">How it Works?</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400" href="contact.html">Contact</a></li>
+					<li class="relative"><a class="flex items-center justify-between px-5 py-2.5 text-lg font-semibold whitespace-nowrap transition-colors duration-300 text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400"><i class="bx bx-sun bx-sm" id="theme_switch"></i></a></li>
 				</ul>
-				<i class="bx bx-menu mobile-nav-toggle"></i>
+				<i class="bx bx-menu mobile-nav-toggle text-5xl cursor-pointer hidden xl:block transition-all duration-500"></i>
 			</nav>
 
 		</div>
@@ -101,28 +117,28 @@
 
 	<main id="main">
 
-		<section id="hero" class="hero d-flex align-items-center">
-			<div class="container">
+		<section id="hero" class="hero flex items-center py-20 lg:py-32">
+			<div class="container mx-auto px-4">
 
-				<div class="row">
-					<div class="col-xl-5 col-lg-5 col-md-5 d-flex align-items-center justify-content-center hero-img" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/hero_side_img.png" class="img-fluid">
+				<div class="flex flex-wrap">
+					<div class="w-full md:w-5/12 lg:w-5/12 xl:w-5/12 flex items-center justify-center hero-img mb-10 md:mb-0" data-aos="zoom-out" data-aos-delay="200">
+						<img src="static/website/img/hero_side_img.png" class="w-full max-w-full h-auto">
 					</div>
-					<div class="col-xl-7 col-lg-7 col-md-7 d-flex flex-column justify-content-center ps-5">
-						<h1 data-aos="fade-up" class="mb-3">Connect. Invest. Relax.</h1>
-						<h4 data-aos="fade-up" class="mb-5">
-							<p class="mt-4 mb-2">
-								Elevate your earnings effortlessly with <span class="fw-bolder">ALGOVA</span>.
+					<div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 flex flex-col justify-center pl-0 md:pl-5">
+						<h1 data-aos="fade-up" class="mb-3 text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white">Connect. Invest. Relax.</h1>
+						<h4 data-aos="fade-up" class="mb-5 text-lg md:text-xl">
+							<p class="mt-4 mb-2 text-gray-700 dark:text-gray-300">
+								Elevate your earnings effortlessly with <span class="font-extrabold">ALGOVA</span>.
 							</p>
-							<p class="mt-4 mb-2">
-								<span class="text-primary">Unlock the path to financial freedom.</span> Modern solutions for steady income through the smart stock exchange trading, designed for everyone.
+							<p class="mt-4 mb-2 text-gray-700 dark:text-gray-300">
+								<span class="text-algova-primary dark:text-blue-400">Unlock the path to financial freedom.</span> Modern solutions for steady income through the smart stock exchange trading, designed for everyone.
 							</p>
 						</h4>
 
-						<div class="text-lg-start" data-aos="fade-up" data-aos-delay="100">
-							<a href="login.html" class="btn-get-started text-white">
+						<div class="text-left lg:text-left" data-aos="fade-up" data-aos-delay="100">
+							<a href="login.html" class="inline-flex items-center mt-8 px-10 py-4 rounded-lg bg-algova-primary text-white font-semibold transition-all duration-300 hover:bg-algova-primary-hover hover:shadow-lg">
 								<span>Get Started</span>
-								<i class='bx bxs-chevron-right bx-fade-right' ></i>
+								<i class='bx bxs-chevron-right bx-fade-right ml-2' ></i>
 							</a>
 						</div>
 
@@ -134,62 +150,62 @@
 
 
 
-		<section id="about" class="about">
-			<div class="container" data-aos="fade-up">
+		<section id="about" class="about py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>What is Algova?</h2>
-					<p>Algova is modern path to your financial freedom</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">What is Algova?</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is modern path to your financial freedom</p>
 				</header>
 
-				<div class="row gx-0">
+				<div class="flex flex-wrap gap-0">
 
-					<div class="col-xl-7 col-lg-7 col-md-7 col-sm-12 col-12 d-flex flex-column justify-content-center" data-aos="fade-up" data-aos-delay="200">
+					<div class="w-full md:w-7/12 lg:w-7/12 xl:w-7/12 flex flex-col justify-center" data-aos="fade-up" data-aos-delay="200">
 
-						<div class="content">
-							<p>
+						<div class="p-10 border border-gray-200 dark:border-gray-700 rounded-[13px] bg-gray-50 dark:bg-gray-800">
+							<p class="text-gray-700 dark:text-gray-300 mb-4">
 								We at algova are dedicated to helping you earn consistently and generate a substantial income using the stock exchange.
 							</p>
-							<p>
+							<p class="text-gray-700 dark:text-gray-300 mb-4">
 								Consider algova as a earning solution for your side income or a daily livelyhood too. We work tirelessly to ensure that you get the opportunity to grow your wealth and enjoy a steady and reliable income.
 							</p>
-							<p>
+							<p class="text-gray-700 dark:text-gray-300 mb-4">
 								Achieve financial success with minimal investment and NO stock trading knowldge.
 							</p>
-							<p>
-								All the magical trading takes place using Algo Trading technology. <a class="scrollto" href="index.html#values">Read more</a>
+							<p class="text-gray-700 dark:text-gray-300 mb-4">
+								All the magical trading takes place using Algo Trading technology. <a class="scrollto text-algova-primary dark:text-blue-400 hover:underline" href="index.html#values">Read more</a>
 							</p>
 						</div>
 
 					</div>
 
-					<div class="col-xl-5 col-lg-5 col-md-5 col-sm-12 col-12 d-flex align-items-center justify-content-center" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/relaxed.png" class="img-fluid">
+					<div class="w-full md:w-5/12 lg:w-5/12 xl:w-5/12 flex items-center justify-center mt-8 md:mt-0" data-aos="zoom-out" data-aos-delay="200">
+						<img src="static/website/img/relaxed.png" class="w-full max-w-full h-auto">
 					</div>
 
 				</div>
 
 
-				<div class="row mt-5">
+				<div class="flex flex-wrap mt-12 gap-4">
 
-					<div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-						<div class="box">
-							<h3>Reliable Income Source</h3>
-							<p>We will help ypu establish reliable part time income source. So you always have reliable financial companion.</p>
+					<div class="w-full md:w-full lg:w-4/12" data-aos="fade-up" data-aos-delay="200">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Reliable Income Source</h3>
+							<p class="text-gray-700 dark:text-gray-300">We will help ypu establish reliable part time income source. So you always have reliable financial companion.</p>
 						</div>
 					</div>
 
-					<div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-						<div class="box">
-							<h3>Made For Eeveryone</h3>
-							<p>We serve each customer with same care and love, We handle and offer services from small individual investor to large corporate clients too.</p>
+					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="400">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Made For Eeveryone</h3>
+							<p class="text-gray-700 dark:text-gray-300">We serve each customer with same care and love, We handle and offer services from small individual investor to large corporate clients too.</p>
 						</div>
 					</div>
 
-					<div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-						<div class="box">
-							<h3>Transparent Operations</h3>
-							<p>Transparent Operations ensure all trading activities and decisions are open and clear to our clients, fostering trust at the highest level of integrity and accountability.</p>
+					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="600">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Transparent Operations</h3>
+							<p class="text-gray-700 dark:text-gray-300">Transparent Operations ensure all trading activities and decisions are open and clear to our clients, fostering trust at the highest level of integrity and accountability.</p>
 						</div>
 					</div>
 
@@ -201,15 +217,15 @@
 
 
 
-		<div id="call_to_action" class="container">
-			<div class="background-container py-5">
-				<div class="row">
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<h2 class="mb-5">Grab your free coins now!!!</h2>
+		<div id="call_to_action" class="container mx-auto px-4 my-8">
+			<div class="relative text-center rounded-2xl text-white py-12 px-6 bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-600 dark:to-blue-700">
+				<div class="flex flex-wrap">
+					<div class="w-full">
+						<h2 class="mb-5 text-3xl md:text-4xl font-bold">Grab your free coins now!!!</h2>
 
-						<a href="login.html" class="btn-get-started text-white">
+						<a href="login.html" class="inline-flex items-center mt-8 px-10 py-4 rounded-lg bg-white text-algova-primary font-semibold transition-all duration-300 hover:bg-gray-100 hover:shadow-lg">
 							<span>Get Started</span>
-							<i class='bx bxs-chevron-right bx-fade-right' ></i>
+							<i class='bx bxs-chevron-right bx-fade-right ml-2' ></i>
 						</a>
 
 					</div>
@@ -218,93 +234,93 @@
 		</div>
 
 
-		<section id="features" class="features">
-			<div class="container" data-aos="fade-up">
+		<section id="features" class="features py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>Why Trust Algova?</h2>
-					<p>People trust Algova, Find out why you should too!</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Why Trust Algova?</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">People trust Algova, Find out why you should too!</p>
 				</header>
 
-				<div class="row">
+				<div class="flex flex-wrap">
 
-					<div class="col-lg-8 mt-5 mt-lg-0 d-flex">
-						<div class="row align-self-center gy-4">
+					<div class="w-full lg:w-8/12 mt-12 lg:mt-0 flex">
+						<div class="flex flex-wrap self-center gap-4">
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class='bx bxl-react'></i>
-									<h3>Trust and Transparency Environment</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class='bx bxl-react text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Trust and Transparency Environment</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class='bx bx-vector'></i>
-									<h3>Fully Automated Platform</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class='bx bx-vector text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Fully Automated Platform</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class='bx bxl-sketch'></i>
-									<h3>Award Winning Research Team</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class='bx bxl-sketch text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Award Winning Research Team</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class='bx bxs-user-voice'></i>
-									<h3>Dedicated RM Support</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class='bx bxs-user-voice text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Dedicated RM Support</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class='bx bx-paper-plane'></i>
-									<h3>Paper Less Account Opening</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class='bx bx-paper-plane text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Paper Less Account Opening</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class='bx bx-support'></i>
-									<h3>Prompt Helpdesk</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class='bx bx-support text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400'></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Prompt Helpdesk</h3>
 								</div>
 							</div>
 
 						</div>
 					</div>
 
-					<div class="col-xl-4 col-lg-4 col-md-4 d-flex align-items-center justify-content-center" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/trust.png" class="img-fluid">
+					<div class="w-full lg:w-4/12 flex items-center justify-center mt-8 lg:mt-0" data-aos="zoom-out" data-aos-delay="200">
+						<img src="static/website/img/trust.png" class="w-full max-w-full h-auto">
 					</div>
 
 				</div>
 
 
-				<div class="row mt-5">
+				<div class="flex flex-wrap mt-12">
 
-					<div class="col-xl-4 col-lg-4 col-md-4 d-flex align-items-center justify-content-center" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/handshake.png" class="img-fluid p-4">
+					<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center" data-aos="zoom-out" data-aos-delay="200">
+						<img src="static/website/img/handshake.png" class="w-full max-w-full h-auto p-4">
 					</div>
 
-					<div class="col-xl-8 col-lg-8 col-md-8 col-sm-12 col-12 d-flex content">
-						<div class="row">
+					<div class="w-full md:w-8/12 lg:w-8/12 xl:w-8/12 flex mt-8 md:mt-0">
+						<div class="flex flex-wrap w-full">
 
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 icon-box mt-3" data-aos="fade-up">
-								<h4>Empowering Your Financial Journey with Algova</h4>
-								<p>Embark on a transformative financial journey with Algova, where your trust is rewarded with remarkable wealth growth opportunities. Our commitment to utilizing advanced Algo Trading technology sets us apart, enabling you to harness the power of the stock exchange for consistent earnings. Whether you're looking for a side income or a primary livelihood, Algova is designed to cater to both novices and seasoned investors alike.</p>
+							<div class="w-full icon-box mt-3" data-aos="fade-up">
+								<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Empowering Your Financial Journey with Algova</h4>
+								<p class="text-gray-700 dark:text-gray-300">Embark on a transformative financial journey with Algova, where your trust is rewarded with remarkable wealth growth opportunities. Our commitment to utilizing advanced Algo Trading technology sets us apart, enabling you to harness the power of the stock exchange for consistent earnings. Whether you're looking for a side income or a primary livelihood, Algova is designed to cater to both novices and seasoned investors alike.</p>
 							</div>
 
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 icon-box mt-3" data-aos="fade-up">
-								<h4>A Reliable Partner for Steady Income</h4>
-								<p>At Algova, we understand the value of trust and reliability in financial investments. Our dedicated team works tirelessly to ensure that our Algo Trading strategies are finely tuned to the dynamic nature of the stock market, offering you a steady and reliable source of income. Our technology-driven approach minimizes risks and maximizes returns, allowing you to enjoy a worry-free investment experience.</p>
+							<div class="w-full icon-box mt-3" data-aos="fade-up">
+								<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">A Reliable Partner for Steady Income</h4>
+								<p class="text-gray-700 dark:text-gray-300">At Algova, we understand the value of trust and reliability in financial investments. Our dedicated team works tirelessly to ensure that our Algo Trading strategies are finely tuned to the dynamic nature of the stock market, offering you a steady and reliable source of income. Our technology-driven approach minimizes risks and maximizes returns, allowing you to enjoy a worry-free investment experience.</p>
 							</div>
 
-							<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 icon-box mt-3" data-aos="fade-up">
-								<h4>Innovative Technology, Minimal Effort</h4>
-								<p>Choosing Algova means choosing innovation and ease. Our cutting-edge Algo Trading technology does the heavy lifting for you, analyzing market trends and executing trades at optimal times to ensure the best possible outcomes. This magical trading process requires no effort on your part, making it the perfect solution for those without stock trading knowledge or those who cannot dedicate time to market analysis.</p>
+							<div class="w-full icon-box mt-3" data-aos="fade-up">
+								<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Innovative Technology, Minimal Effort</h4>
+								<p class="text-gray-700 dark:text-gray-300">Choosing Algova means choosing innovation and ease. Our cutting-edge Algo Trading technology does the heavy lifting for you, analyzing market trends and executing trades at optimal times to ensure the best possible outcomes. This magical trading process requires no effort on your part, making it the perfect solution for those without stock trading knowledge or those who cannot dedicate time to market analysis.</p>
 							</div>
 
 						</div>
@@ -322,46 +338,46 @@
 
 
 
-		<section id="values" class="values">
+		<section id="values" class="values py-16 overflow-hidden">
 
-			<div class="container" data-aos="fade-up">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>Algo Trading</h2>
-					<p>What is Algo Trading and its Benefits</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Algo Trading</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">What is Algo Trading and its Benefits</p>
 				</header>
 
-				<div class="row">
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center mb-4" data-aos="fade-up">
-						<p>
+				<div class="flex flex-wrap">
+					<div class="w-full text-center mb-4" data-aos="fade-up">
+						<p class="text-gray-700 dark:text-gray-300 mb-4">
 							Algo Trading, or Algorithmic Trading, revolutionizes investment strategies by using sophisticated algorithms to execute trades at unparalleled speed and efficiency.
 						</p>
-						<p>
+						<p class="text-gray-700 dark:text-gray-300 mb-4">
 							This technology-driven approach minimizes human error and maximizes profit potential, making it an ideal solution for investors seeking to leverage market trends without the need for constant monitoring. Embrace the future of trading with Algo Trading, where precision, speed, and strategic automation unlock new realms of financial opportunity.
 						</p>
 					</div>
 
-					<div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-						<div class="box">
-							<img src="static/website/img/rocket.png" class="w-75">
-							<h3>Efficient and Fast</h3>
-							<p>algo trading enables efficient and fast execution of trades, taking advantage of market opportunities and minimizing the impact of human emotions or delays.</p>
+					<div class="w-full md:w-full lg:w-4/12" data-aos="fade-up" data-aos-delay="200">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<img src="static/website/img/rocket.png" class="w-3/4 mx-auto p-8 lg:p-12 transition-transform duration-500 scale-90 hover:scale-100">
+							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Efficient and Fast</h3>
+							<p class="text-gray-700 dark:text-gray-300">algo trading enables efficient and fast execution of trades, taking advantage of market opportunities and minimizing the impact of human emotions or delays.</p>
 						</div>
 					</div>
 
-					<div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="400">
-						<div class="box">
-							<img src="static/website/img/accuracy.png" class="w-75">
-							<h3>Increased Accuracy</h3>
-							<p>algo trading eliminates the potential for human errors in manual trading, ensuring precise and accurate trade execution based on predefined algorithms.</p>
+					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="400">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<img src="static/website/img/accuracy.png" class="w-3/4 mx-auto p-8 lg:p-12 transition-transform duration-500 scale-90 hover:scale-100">
+							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Increased Accuracy</h3>
+							<p class="text-gray-700 dark:text-gray-300">algo trading eliminates the potential for human errors in manual trading, ensuring precise and accurate trade execution based on predefined algorithms.</p>
 						</div>
 					</div>
 
-					<div class="col-lg-4 mt-4 mt-lg-0" data-aos="fade-up" data-aos-delay="600">
-						<div class="box">
-							<img src="static/website/img/risk.png" class="w-75">
-							<h3>Diversification and Risk Management</h3>
-							<p>algo trading allows for diversification across multiple strategies, markets, and instruments, reducing risk and enhancing the overall portfolio performance.</p>
+					<div class="w-full md:w-full lg:w-4/12 mt-4 lg:mt-0" data-aos="fade-up" data-aos-delay="600">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<img src="static/website/img/risk.png" class="w-3/4 mx-auto p-8 lg:p-12 transition-transform duration-500 scale-90 hover:scale-100">
+							<h3 class="text-2xl font-bold mb-4 text-algova-primary dark:text-blue-400">Diversification and Risk Management</h3>
+							<p class="text-gray-700 dark:text-gray-300">algo trading allows for diversification across multiple strategies, markets, and instruments, reducing risk and enhancing the overall portfolio performance.</p>
 						</div>
 					</div>
 
@@ -372,68 +388,68 @@
 
 
 
-		<section id="features" class="features">
-			<div class="container" data-aos="fade-up">
+		<section id="features" class="features py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>Taking Advantages Of Algo Trading</h2>
-					<p>Algova is build around technology of algo trading</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Taking Advantages Of Algo Trading</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is build around technology of algo trading</p>
 				</header>
 
-				<div class="row">
+				<div class="flex flex-wrap">
 
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12 text-center mb-4" data-aos="fade-up">
-						<p>
+					<div class="w-full text-center mb-4" data-aos="fade-up">
+						<p class="text-gray-700 dark:text-gray-300">
 							Algo Trading offers the definitive edge in financial markets, combining high-speed trade execution with advanced analytics to reduce risks and enhance profitability. Experience the advantages of precision, efficiency, and automated strategy optimization that transform investment outcomes.
 						</p>
 					</div>
 
-					<div class="col-xl-4 col-lg-4 col-md-4 d-flex align-items-center justify-content-center" data-aos="zoom-out" data-aos-delay="200">
-						<img src="static/website/img/trading.png" class="img-fluid">
+					<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center mb-8 md:mb-0" data-aos="zoom-out" data-aos-delay="200">
+						<img src="static/website/img/trading.png" class="w-full max-w-full h-auto">
 					</div>
 
-					<div class="col-lg-8 col-md-8 mt-5 mt-lg-0 d-flex">
-						<div class="row align-self-center gy-4">
+					<div class="w-full md:w-8/12 lg:w-8/12 mt-12 md:mt-0 flex">
+						<div class="flex flex-wrap self-center gap-4 w-full">
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="200">
-								<div class="feature-box d-flex align-items-center">
-									<i class="bx bx-check"></i>
-									<h3>Consistency</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="200">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Consistency</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="300">
-								<div class="feature-box d-flex align-items-center">
-									<i class="bx bx-check"></i>
-									<h3>Backtesting and Optimization</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="300">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Backtesting and Optimization</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="400">
-								<div class="feature-box d-flex align-items-center">
-									<i class="bx bx-check"></i>
-									<h3>Time-saving</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="400">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Time-saving</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="500">
-								<div class="feature-box d-flex align-items-center">
-									<i class="bx bx-check"></i>
-									<h3>Improved Order Placement</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="500">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Improved Order Placement</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="600">
-								<div class="feature-box d-flex align-items-center">
-									<i class="bx bx-check"></i>
-									<h3>Enhanced Market Monitoring</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="600">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Enhanced Market Monitoring</h3>
 								</div>
 							</div>
 
-							<div class="col-md-6" data-aos="zoom-out" data-aos-delay="700">
-								<div class="feature-box d-flex align-items-center">
-									<i class="bx bx-check"></i>
-									<h3>Risk Control</h3>
+							<div class="w-full md:w-6/12" data-aos="zoom-out" data-aos-delay="700">
+								<div class="border border-gray-200 dark:border-gray-700 p-6 shadow-lg transition-all duration-300 h-full rounded-[13px] flex items-center bg-white dark:bg-gray-800">
+									<i class="bx bx-check text-2xl bg-blue-50 dark:bg-blue-900/30 p-1.5 mr-2.5 rounded-full transition-all duration-500 text-algova-primary dark:text-blue-400"></i>
+									<h3 class="text-lg text-gray-900 dark:text-gray-100 font-bold m-0">Risk Control</h3>
 								</div>
 							</div>
 
@@ -445,65 +461,65 @@
 		</section>
 
 
-		<section id="features" class="features">
-			<div class="container" data-aos="fade-up">
+		<section id="features" class="features py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<div class="row feature-icons" data-aos="fade-up">
+				<div class="flex flex-wrap feature-icons" data-aos="fade-up">
 
-					<header class="section-header">
-						<h2>Why Trust Algova</h2>
-						<p>Algova is here for you and for everyone around you</p>
+					<header class="section-header text-center pb-10 w-full">
+						<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Why Trust Algova</h2>
+						<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is here for you and for everyone around you</p>
 					</header>
 
-					<div class="row">
+					<div class="flex flex-wrap w-full">
 
-						<div class="col-xl-4 col-lg-4 col-md-4 d-flex align-items-center justify-content-center" data-aos="zoom-out" data-aos-delay="200">
-							<img src="static/website/img/trust_algova.png" class="img-fluid p-4">
+						<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 flex items-center justify-center" data-aos="zoom-out" data-aos-delay="200">
+							<img src="static/website/img/trust_algova.png" class="w-full max-w-full h-auto p-4">
 						</div>
 
-						<div class="col-xl-8 col-lg-8 col-md-8 d-flex content">
-							<div class="row align-self-center gy-4">
+						<div class="w-full md:w-8/12 lg:w-8/12 xl:w-8/12 flex mt-8 md:mt-0">
+							<div class="flex flex-wrap self-center gap-4 w-full">
 
-								<div class="col-md-6 icon-box" data-aos="fade-up">
+								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up">
 									<div>
-										<h4>Intense Research</h4>
-										<p>Algo trading strategies and decisions are supported by thorough and comprehensive research, ensuring a solid foundation for trading success.</p>
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Intense Research</h4>
+										<p class="text-gray-700 dark:text-gray-300">Algo trading strategies and decisions are supported by thorough and comprehensive research, ensuring a solid foundation for trading success.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="100">
+								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="100">
 									<div>
-										<h4>Optimal Strategies</h4>
-										<p>Algo trading platforms provide access to carefully designed and fine-tuned trading strategies to maximize profitability and minimize risk.</p>
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Optimal Strategies</h4>
+										<p class="text-gray-700 dark:text-gray-300">Algo trading platforms provide access to carefully designed and fine-tuned trading strategies to maximize profitability and minimize risk.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="200">
+								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="200">
 									<div>
-										<h4>Risk Management</h4>
-										<p>We ensured to use combination of risk management tools that will provid you with a sense of security and confidence in investing with us, ensuring that we can protect your capital and maintain a sustainable trading strategy.</p>
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Risk Management</h4>
+										<p class="text-gray-700 dark:text-gray-300">We ensured to use combination of risk management tools that will provid you with a sense of security and confidence in investing with us, ensuring that we can protect your capital and maintain a sustainable trading strategy.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="300">
+								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="300">
 									<div>
-										<h4>Backtesting</h4>
-										<p>Algova has built in one of best backtesting (Shadow trading) backtesting tool.<br>
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Backtesting</h4>
+										<p class="text-gray-700 dark:text-gray-300">Algova has built in one of best backtesting (Shadow trading) backtesting tool.<br>
 										Evaluation of trading strategies by simulating them with historical data, providing valuable insights into their potential performance.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="400">
+								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="400">
 									<div>
-										<h4>No Strategy Selection</h4>
-										<p>We handle the strategy selection for you - we have thoroughly researched, tested, and implemented the best strategies, which we continuously update for optimal performance.</p>
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">No Strategy Selection</h4>
+										<p class="text-gray-700 dark:text-gray-300">We handle the strategy selection for you - we have thoroughly researched, tested, and implemented the best strategies, which we continuously update for optimal performance.</p>
 									</div>
 								</div>
 
-								<div class="col-md-6 icon-box" data-aos="fade-up" data-aos-delay="500">
+								<div class="w-full md:w-6/12 icon-box" data-aos="fade-up" data-aos-delay="500">
 									<div>
-										<h4>Complete Transparency</h4>
-										<p>We provide users with easy access to all relevant data, including trade history, strategy performance, account performance, and detailed reports on a daily, weekly, and monthly basis in a user-friendly format.</p>
+										<h4 class="text-xl font-bold text-algova-primary dark:text-blue-400 mb-2">Complete Transparency</h4>
+										<p class="text-gray-700 dark:text-gray-300">We provide users with easy access to all relevant data, including trade history, strategy performance, account performance, and detailed reports on a daily, weekly, and monthly basis in a user-friendly format.</p>
 									</div>
 								</div>
 
@@ -519,37 +535,37 @@
 
 
 
-		<section id="services" class="services">
-			<div class="container" data-aos="fade-up">
+		<section id="services" class="services py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>Services</h2>
-					<p>The effortless magical world of Algova</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Services</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">The effortless magical world of Algova</p>
 				</header>
 
-				<div class="row gy-4">
+				<div class="flex flex-wrap gap-4">
 
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-						<div class="service-box blue">
-							<i class="bx bxs-bar-chart-alt-2 icon"></i>
-							<h4 class="mb-4">Best Trading Engine</h4>
-							<p>A powerful algo trading engine built on distributed architecture with multiple data providers around the world in Stocks. So you get the best possible automated trading experience.</p>
+					<div class="w-full md:w-6/12 lg:w-4/12" data-aos="fade-up" data-aos-delay="200">
+						<div class="shadow-lg border border-gray-200 dark:border-gray-700 h-full p-12 lg:p-8 text-center transition-all duration-300 rounded-3xl border-b-[3px] border-[#2db6fa] bg-white dark:bg-gray-800 hover:bg-algova-primary hover:text-white dark:hover:bg-blue-600">
+							<i class="bx bxs-bar-chart-alt-2 text-7xl p-12 lg:p-8 rounded mb-6 inline-block leading-none transition-all duration-300 text-[#2db6fa]"></i>
+							<h4 class="mb-4 font-bold text-gray-900 dark:text-gray-100">Best Trading Engine</h4>
+							<p class="text-gray-700 dark:text-gray-300">A powerful algo trading engine built on distributed architecture with multiple data providers around the world in Stocks. So you get the best possible automated trading experience.</p>
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-						<div class="service-box orange">
-							<i class="bx bxs-magic-wand icon"></i>
-							<h4 class="mb-4">Algo Trading Magic</h4>
-							<p>Algorithms that are designed to execute trades based on predefined criteria, such as price movements or market trends, without the need for human intervention.</p>
+					<div class="w-full md:w-6/12 lg:w-4/12" data-aos="fade-up" data-aos-delay="300">
+						<div class="shadow-lg border border-gray-200 dark:border-gray-700 h-full p-12 lg:p-8 text-center transition-all duration-300 rounded-3xl border-b-[3px] border-[#f68c09] bg-white dark:bg-gray-800 hover:bg-algova-primary hover:text-white dark:hover:bg-blue-600">
+							<i class="bx bxs-magic-wand text-7xl p-12 lg:p-8 rounded mb-6 inline-block leading-none transition-all duration-300 text-[#f68c09]"></i>
+							<h4 class="mb-4 font-bold text-gray-900 dark:text-gray-100">Algo Trading Magic</h4>
+							<p class="text-gray-700 dark:text-gray-300">Algorithms that are designed to execute trades based on predefined criteria, such as price movements or market trends, without the need for human intervention.</p>
 						</div>
 					</div>
 
-					<div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-						<div class="service-box green">
-							<i class="bx bxs-analyse icon"></i>
-							<h4 class="mb-4">Rigorous Backtesting</h4>
-							<p>Rigorous backtesting is a critical process in finance where trading strategies are tested using historical data to determine their viability and effectiveness.</p>
+					<div class="w-full md:w-6/12 lg:w-4/12" data-aos="fade-up" data-aos-delay="400">
+						<div class="shadow-lg border border-gray-200 dark:border-gray-700 h-full p-12 lg:p-8 text-center transition-all duration-300 rounded-3xl border-b-[3px] border-[#08da4e] bg-white dark:bg-gray-800 hover:bg-algova-primary hover:text-white dark:hover:bg-blue-600">
+							<i class="bx bxs-analyse text-7xl p-12 lg:p-8 rounded mb-6 inline-block leading-none transition-all duration-300 text-[#08da4e]"></i>
+							<h4 class="mb-4 font-bold text-gray-900 dark:text-gray-100">Rigorous Backtesting</h4>
+							<p class="text-gray-700 dark:text-gray-300">Rigorous backtesting is a critical process in finance where trading strategies are tested using historical data to determine their viability and effectiveness.</p>
 						</div>
 					</div>
 
@@ -560,45 +576,45 @@
 
 
 
-		<section id="pricing" class="pricing">
-			<div class="container" data-aos="fade-up">
+		<section id="pricing" class="pricing py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>Pricing</h2>
-					<p>Algova is here for you and everyone around you</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Pricing</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Algova is here for you and everyone around you</p>
 				</header>
 
-				<div class="row gy-4" data-aos="fade-left">
+				<div class="flex flex-wrap gap-4" data-aos="fade-left">
 
-					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="zoom-in" data-aos-delay="100">
-						<div class="box text-info">
-							<h3>USER ACCOUNT</h3>
-							<img src="static/website/img/bike.png" class="img-fluid">
-							<ul>
-								<li><i class="bx bx-check-double text-info me-2"></i> Free Investment <span class="text-muted">(upto 10,000 ₹ Investment)</span></li>
-								<li>
-									<p class="mb-0">0 Coin &nbsp; = &nbsp; 1 Trade (Invs. below 10,000 Rs.)</p>
-									<p class="mb-4">5 Coins &nbsp; = &nbsp; 1 Trade (Invs. above 10,000 Rs.)</p>
+					<div class="w-full md:w-6/12 lg:w-6/12 xl:w-6/12" data-aos="zoom-in" data-aos-delay="100">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800 text-cyan-500 dark:text-cyan-400">
+							<h3 class="text-lg font-bold mb-4 text-cyan-500 dark:text-cyan-400">USER ACCOUNT</h3>
+							<img src="static/website/img/bike.png" class="w-full max-w-full h-auto mx-auto">
+							<ul class="list-none p-0 mt-6 text-left">
+								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Free Investment <span class="text-gray-500 dark:text-gray-400">(upto 10,000 ₹ Investment)</span></li>
+								<li class="mb-3">
+									<p class="mb-0 text-gray-700 dark:text-gray-300">0 Coin &nbsp; = &nbsp; 1 Trade (Invs. below 10,000 Rs.)</p>
+									<p class="mb-0 text-gray-700 dark:text-gray-300">5 Coins &nbsp; = &nbsp; 1 Trade (Invs. above 10,000 Rs.)</p>
 								</li>
-								<li><i class="bx bx-check-double text-info me-2"></i> Daily, Weekly, Monthly Reports</li>
-								<li><i class="bx bx-check-double text-info me-2"></i> Details about current strategy</li>
-								<li><i class="bx bx-check-double text-info me-2"></i> Chat Support</li>
+								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Daily, Weekly, Monthly Reports</li>
+								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Details about current strategy</li>
+								<li class="mb-3"><i class="bx bx-check-double text-cyan-500 dark:text-cyan-400 mr-2"></i> Chat Support</li>
 							</ul>
 						</div>
 					</div>
 
-					<div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12" data-aos="zoom-in" data-aos-delay="100">
-						<div class="box text-primary">
-							<h3>BUSINESS ACCOUNT</h3>
-							<img src="static/website/img/rocket.png" class="img-fluid w-40">
-							<ul>
-								<li><i class="bx bx-check-double text-primary me-2"></i> Minimum investment 10,000 ₹</span></li>
-								<li><p class="mb-4">10 Coins &nbsp; = &nbsp; 1 Profitable Trade</p></li>
-								<li><i class="bx bx-check-double bx-flashing text-primary me-2"></i> Only pay for profitable trades</li>
-								<li><i class="bx bx-check-double text-primary me-2"></i> Daily, Weekly, Monthly Reports</li>
-								<li><i class="bx bx-check-double text-primary me-2"></i> Receive reports on email</li>
-								<li><i class="bx bx-check-double text-primary me-2"></i> Details about current strategy</li>
-								<li><i class="bx bx-check-double text-primary me-2"></i> Live Chat Support</li>
+					<div class="w-full md:w-6/12 lg:w-6/12 xl:w-6/12" data-aos="zoom-in" data-aos-delay="100">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800 text-algova-primary dark:text-blue-400">
+							<h3 class="text-lg font-bold mb-4 text-algova-primary dark:text-blue-400">BUSINESS ACCOUNT</h3>
+							<img src="static/website/img/rocket.png" class="w-2/5 mx-auto">
+							<ul class="list-none p-0 mt-6 text-left">
+								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Minimum investment 10,000 ₹</li>
+								<li class="mb-3"><p class="mb-0 text-gray-700 dark:text-gray-300">10 Coins &nbsp; = &nbsp; 1 Profitable Trade</p></li>
+								<li class="mb-3"><i class="bx bx-check-double bx-flashing text-algova-primary dark:text-blue-400 mr-2"></i> Only pay for profitable trades</li>
+								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Daily, Weekly, Monthly Reports</li>
+								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Receive reports on email</li>
+								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Details about current strategy</li>
+								<li class="mb-3"><i class="bx bx-check-double text-algova-primary dark:text-blue-400 mr-2"></i> Live Chat Support</li>
 							</ul>
 						</div>
 					</div>
@@ -610,15 +626,15 @@
 
 
 
-		<div id="call_to_action" class="container">
-			<div class="background-container py-5">
-				<div class="row">
-					<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
-						<h2 class="mb-5">Grab your free coins now!!!</h2>
+		<div id="call_to_action" class="container mx-auto px-4 my-8">
+			<div class="relative text-center rounded-2xl text-white py-12 px-6 bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-600 dark:to-blue-700">
+				<div class="flex flex-wrap">
+					<div class="w-full">
+						<h2 class="mb-5 text-3xl md:text-4xl font-bold">Grab your free coins now!!!</h2>
 
-						<a href="login.html" class="btn-get-started text-white">
+						<a href="login.html" class="inline-flex items-center mt-8 px-10 py-4 rounded-lg bg-white text-algova-primary font-semibold transition-all duration-300 hover:bg-gray-100 hover:shadow-lg">
 							<span>Get Started</span>
-							<i class='bx bxs-chevron-right bx-fade-right' ></i>
+							<i class='bx bxs-chevron-right bx-fade-right ml-2' ></i>
 						</a>
 
 					</div>
@@ -627,41 +643,41 @@
 		</div>
 
 
-		<section id="contact" class="contact">
-			<div class="container" data-aos="fade-up">
+		<section id="contact" class="contact py-16 overflow-hidden">
+			<div class="container mx-auto px-4" data-aos="fade-up">
 
-				<header class="section-header">
-					<h2>Contact</h2>
-					<p>Have a question? Here to help.</p>
+				<header class="section-header text-center pb-10">
+					<h2 class="text-sm uppercase tracking-wide font-bold text-algova-primary dark:text-blue-400 m-0">Contact</h2>
+					<p class="mt-2.5 text-2xl lg:text-3xl text-gray-600 dark:text-gray-400">Have a question? Here to help.</p>
 				</header>
 
-				<div class="row d-flex justify-content-center">
-					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 my-2">
-						<div class="box">
-							<h3><i class="bx bx-phone bx-md"></i></h3>
-							<h3>Call Us</h3>
-							<a href="tel:+918806444444">+91 8806444444</a>
+				<div class="flex flex-wrap justify-center gap-4">
+					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-phone bx-md"></i></h3>
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2">Call Us</h3>
+							<a href="tel:+918806444444" class="text-teal-600 dark:text-teal-400 hover:underline">+91 8806444444</a>
 						</div>
 					</div>
-					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 my-2">
-						<div class="box">
-							<h3><i class="bx bx-envelope bx-md"></i></h3>
-							<h3>Email Us</h3>
-							<a href="mailto:support@algova.com?subject=Support%3A%20Hello%20Team%20I%20Have%20a%20Doubt&body=Hello%20Team%2C%0AI%20have%20a%20doubt%2C%20I%20need%20you%20help.%0A%0ARegards.">support@Algova.com</a>
+					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-envelope bx-md"></i></h3>
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2">Email Us</h3>
+							<a href="mailto:support@algova.com?subject=Support%3A%20Hello%20Team%20I%20Have%20a%20Doubt&body=Hello%20Team%2C%0AI%20have%20a%20doubt%2C%20I%20need%20you%20help.%0A%0ARegards." class="text-teal-600 dark:text-teal-400 hover:underline">support@Algova.com</a>
 						</div>
 					</div>
-					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 my-2">
-						<div class="box">
-							<h3><i class="bx bx-question-mark bx-md"></i></h3>
-							<h3>FAQ's</h3>
-							<a href="faqs.html">FAQ's</a>
+					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-question-mark bx-md"></i></h3>
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2">FAQ's</h3>
+							<a href="faqs.html" class="text-teal-600 dark:text-teal-400 hover:underline">FAQ's</a>
 						</div>
 					</div>
-					<div class="col-xl-3 col-lg-3 col-md-3 col-sm-6 col-6 my-2">
-						<div class="box">
-							<h3><i class="bx bx-chat bx-md"></i></h3>
-							<h3>Helpdesk</h3>
-							<a href="user/helpdesk/tickets">Ask on helpdesk</a>
+					<div class="w-full sm:w-6/12 md:w-3/12 lg:w-3/12 xl:w-3/12 my-2">
+						<div class="p-8 text-center transition-all duration-300 h-full rounded-[22px] border border-gray-400 dark:border-gray-600 cursor-pointer hover:shadow-lg hover:shadow-gray-500/50 dark:hover:shadow-gray-700/50 bg-white dark:bg-gray-800">
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2"><i class="bx bx-chat bx-md"></i></h3>
+							<h3 class="text-algova-primary dark:text-blue-400 mb-2">Helpdesk</h3>
+							<a href="user/helpdesk/tickets" class="text-teal-600 dark:text-teal-400 hover:underline">Ask on helpdesk</a>
 						</div>
 					</div>
 				</div>
@@ -694,37 +710,37 @@
 		</div>
 	-->
 
-	<div class="footer-top pb-0">
-		<div class="container">
-			<div class="row gy-4">
+	<div class="footer-top pb-0 bg-white dark:bg-gray-900 border-t border-gray-200 dark:border-gray-700 shadow-sm dark:shadow-gray-800">
+		<div class="container mx-auto px-4">
+			<div class="flex flex-wrap gap-4 py-8">
 
-				<div class="col-xl-4 col-lg-4 col-md-4 col-sm-12 footer-info mb-0">
+				<div class="w-full md:w-4/12 lg:w-4/12 xl:w-4/12 footer-info mb-0">
 
-					<a href="index.html" class="app-brand-link gap-2">
-						<img src="https://algova.in/static/website/algova_logo.png">
-						<h1 class="app-brand-text mt-2">
-							ALGOVA <p class="app-brand-slogan mb-0">Connect. Invest. Relax.</p>
+					<a href="index.html" class="flex items-center gap-2">
+						<img src="https://algova.in/static/website/algova_logo.png" class="w-16 mr-2.5">
+						<h1 class="text-4xl font-extrabold tracking-wide text-algova-primary dark:text-blue-400 mt-2">
+							ALGOVA <p class="text-base font-bold text-algova-primary dark:text-blue-400 mb-0">Connect. Invest. Relax.</p>
 						</h1>
-						<span class="app-brand-beta">BETA</span>
+						<span class="text-gray-500 dark:text-gray-400 text-sm relative -bottom-5">BETA</span>
 					</a>
 
-					<p class="my-2">
+					<p class="my-2 text-gray-600 dark:text-gray-400 leading-6">
 						Algova is an earning solution for your side income or a daily livelihood. We work tirelessly to ensure that you get the opportunity to grow your wealth and enjoy a steady and reliable income.
 					</p>
 
 
-					<div class="row mt-3">
-						<div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 social-links gap-2">
-							<a href="https://twitter.com/hialgova" target="_blank">
+					<div class="flex flex-wrap mt-3">
+						<div class="w-full social-links flex gap-2">
+							<a href="https://twitter.com/hialgova" target="_blank" class="inline-block text-gray-400 dark:text-gray-500 leading-none mr-4 transition-all duration-600 hover:text-blue-500 dark:hover:text-blue-400">
 								<i class="bx bxl-twitter bx-md"></i>
 							</a>
-							<a href="https://twitter.com/hialgova" target="_blank">
+							<a href="https://twitter.com/hialgova" target="_blank" class="inline-block text-gray-400 dark:text-gray-500 leading-none mr-4 transition-all duration-600 hover:text-blue-500 dark:hover:text-blue-400">
 								<i class="bx bxl-facebook-circle bx-md"></i>
 							</a>
-							<a href="https://www.instagram.com/hialgova" target="_blank">
+							<a href="https://www.instagram.com/hialgova" target="_blank" class="inline-block text-gray-400 dark:text-gray-500 leading-none mr-4 transition-all duration-600 hover:text-blue-500 dark:hover:text-blue-400">
 								<i class="bx bxl-instagram-alt bx-md"></i>
 							</a>
-							<a href="https://www.linkedin.com/in/hialgova" target="_blank">
+							<a href="https://www.linkedin.com/in/hialgova" target="_blank" class="inline-block text-gray-400 dark:text-gray-500 leading-none mr-4 transition-all duration-600 hover:text-blue-500 dark:hover:text-blue-400">
 								<i class="bx bxl-linkedin-square bx-md"></i>
 							</a>
 						</div>
@@ -733,44 +749,44 @@
 				</div>
 
 
-				<div class="col-lg-2 col-lg-2 col-md-2 col-sm-6 col-6 footer-links">
-					<h4>Company</h4>
-					<ul>
-						<li><i class="bx bxs-chevron-right"></i> <a href="index.html">Home</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="about.html">About</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="contact.html">Contact</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="csr.html">CSR</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="career.html">Career</a></li>
+				<div class="w-full sm:w-6/12 md:w-2/12 lg:w-2/12 footer-links mb-8 md:mb-0">
+					<h4 class="text-base font-bold uppercase relative pb-3 text-algova-primary dark:text-blue-400">Company</h4>
+					<ul class="list-none p-0 m-0">
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="index.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Home</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="about.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">About</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="contact.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Contact</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="csr.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">CSR</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="career.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Career</a></li>
 					</ul>
 				</div>
 
-				<div class="col-lg-2 col-lg-2 col-md-2 col-sm-6 col-6 footer-links">
-					<h4>Assistance</h4>
-					<ul>
-						<li><i class="bx bxs-chevron-right"></i> <a href="faqs.html">FAQ's</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="index.html">Helpdesk</a></li>
+				<div class="w-full sm:w-6/12 md:w-2/12 lg:w-2/12 footer-links mb-8 md:mb-0">
+					<h4 class="text-base font-bold uppercase relative pb-3 text-algova-primary dark:text-blue-400">Assistance</h4>
+					<ul class="list-none p-0 m-0">
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="faqs.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">FAQ's</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="index.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Helpdesk</a></li>
 					</ul>
 
-					<h4 class="mt-4">Programs</h4>
-					<ul>
-						<li><i class="bx bxs-chevron-right"></i> <a href="streategy-imp-program.html">Strat-hunt Program</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="bug-bounty-program.html">Bug Bounty</a></li>
-					</ul>
-				</div>
-
-				<div class="col-lg-2 col-lg-2 col-md-2 col-sm-6 col-6 footer-links">
-					<h4>Utilities</h4>
-					<ul>
-						<li><i class="bx bxs-chevron-right"></i> <a href="what_is_algova.html">What is Algova</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="how_it_works.html">How it works</a></li>
+					<h4 class="mt-4 text-base font-bold uppercase relative pb-3 text-algova-primary dark:text-blue-400">Programs</h4>
+					<ul class="list-none p-0 m-0">
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="streategy-imp-program.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Strat-hunt Program</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="bug-bounty-program.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Bug Bounty</a></li>
 					</ul>
 				</div>
 
-				<div class="col-lg-2 col-lg-2 col-md-2 col-sm-6 col-6 footer-links">
-					<h4>Policy</h4>
-					<ul>
-						<li><i class="bx bxs-chevron-right"></i> <a href="privacy-policy.html">Privacy Policy</a></li>
-						<li><i class="bx bxs-chevron-right"></i> <a href="terms-conditions.html">Terms & Conditions</a></li>
+				<div class="w-full sm:w-6/12 md:w-2/12 lg:w-2/12 footer-links mb-8 md:mb-0">
+					<h4 class="text-base font-bold uppercase relative pb-3 text-algova-primary dark:text-blue-400">Utilities</h4>
+					<ul class="list-none p-0 m-0">
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="what_is_algova.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">What is Algova</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="how_it_works.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">How it works</a></li>
+					</ul>
+				</div>
+
+				<div class="w-full sm:w-6/12 md:w-2/12 lg:w-2/12 footer-links mb-8 md:mb-0">
+					<h4 class="text-base font-bold uppercase relative pb-3 text-algova-primary dark:text-blue-400">Policy</h4>
+					<ul class="list-none p-0 m-0">
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="privacy-policy.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Privacy Policy</a></li>
+						<li class="py-2.5 flex items-center"><i class="bx bxs-chevron-right pr-1.5 text-gray-500 dark:text-gray-400 text-base leading-none"></i> <a href="terms-conditions.html" class="transition-all duration-400 inline-block leading-tight text-gray-600 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400">Terms & Conditions</a></li>
 					</ul>
 				</div>
 
@@ -778,28 +794,27 @@
 		</div>
 	</div>
 
-	<div class="container">
-		<div class="copyright">
+	<div class="container mx-auto px-4">
+		<div class="copyright text-center pt-8 text-algova-dark dark:text-gray-300">
 
-			<p class="small text-muted">
-				<a class="text-muted" href="sitemap.html">Sitemap</a>
+			<p class="text-sm text-gray-500 dark:text-gray-400">
+				<a class="text-gray-500 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400" href="sitemap.html">Sitemap</a>
 				&nbsp; | &nbsp; 
-				<a class="text-muted" href="disclaimer.html">Disclaimers</a>
+				<a class="text-gray-500 dark:text-gray-400 hover:text-algova-primary dark:hover:text-blue-400" href="disclaimer.html">Disclaimers</a>
 			</p>
 
-			<p>&copy; <script>document.write(new Date().getFullYear());</script> <b>ALGOVA INVESTMENTS LTD.</b> All rights are reserved.</p>
-			<p>Made with <i class="bx bxs-heart bx-flashing" style="color:#ff0000"></i> in <b>India</b> <img src="static/website/img/indian_flag.jpg"class="footer_indian_flag" ></p>
+			<p class="mt-4">&copy; <script>document.write(new Date().getFullYear());</script> <b>ALGOVA INVESTMENTS LTD.</b> All rights are reserved.</p>
+			<p class="mt-2">Made with <i class="bx bxs-heart bx-flashing text-red-500"></i> in <b>India</b> <img src="static/website/img/indian_flag.jpg" class="w-8 rounded mb-2.5 inline-block" ></p>
 		</div>
 	</div>
 </footer>
 
-<a href="#" class="back-to-top d-flex align-items-center justify-content-center">
+<a href="#" class="back-to-top fixed right-8 bottom-10 flex items-center justify-center w-12 h-12 bg-algova-primary text-white rounded-full opacity-0 invisible transition-all duration-300 hover:bg-algova-primary-hover z-50">
 	<i class="bx bxs-chevron-up"></i>
 </a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/glightbox/3.2.0/js/glightbox.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.2/swiper-bundle.min.js"></script>
