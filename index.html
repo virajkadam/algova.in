@@ -88,7 +88,7 @@
 
 <body>
 
-	<header id="header" class="header fixed top-0 left-0 right-0 z-[997] transition-all duration-500 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md shadow-lg dark:shadow-gray-900/50 border-b border-gray-200/50 dark:border-gray-700/50">
+	<header id="header" class="header fixed top-0 left-0 right-0 z-[997] transition-all duration-300 bg-white/70 dark:bg-gray-900/70 backdrop-blur-xl shadow-sm dark:shadow-gray-900/30 border-b border-white/20 dark:border-gray-700/30">
 		<div class="container mx-auto px-4 lg:px-8">	
 			<div class="flex items-center justify-between h-20 lg:h-24">
 
@@ -142,32 +142,32 @@
 				</nav>
 
 				<div class="flex items-center gap-3 lg:hidden">
-					<button id="theme_switch" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300">
+					<button id="theme_switch" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300 active:scale-95">
 						<i class="bx bx-sun text-lg dark:hidden"></i>
 						<i class="bx bx-moon text-lg hidden dark:block"></i>
 					</button>
-					<button id="mobile-menu-toggle" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300">
-						<i class="bx bx-menu text-2xl transition-transform duration-300"></i>
+					<button id="mobile-menu-toggle" class="flex items-center justify-center w-10 h-10 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-algova-primary dark:hover:bg-blue-600 hover:text-white transition-all duration-300 active:scale-95" aria-label="Toggle mobile menu">
+						<i class="bx bx-menu text-2xl transition-transform duration-300" id="mobile-menu-icon"></i>
 					</button>
 				</div>
 
 			</div>
 
 			<!-- Mobile Menu -->
-			<div id="mobile-menu" class="lg:hidden hidden border-t border-gray-200 dark:border-gray-700 bg-white/95 dark:bg-gray-900/95 backdrop-blur-md">
-				<nav class="container mx-auto px-4 py-4">
-					<ul class="flex flex-col gap-1">
+			<div id="mobile-menu" class="lg:hidden hidden border-t border-white/20 dark:border-gray-700/30 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl shadow-xl">
+				<nav class="container mx-auto px-4 py-6">
+					<ul class="flex flex-col gap-2">
 						<li>
-							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="index.html">Home</a>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/10 dark:hover:bg-blue-400/10 rounded-xl transition-all duration-300 active:scale-[0.98]" href="index.html">Home</a>
 						</li>
 						<li>
-							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="what_is_algova.html">What is Algova</a>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/10 dark:hover:bg-blue-400/10 rounded-xl transition-all duration-300 active:scale-[0.98]" href="what_is_algova.html">What is Algova</a>
 						</li>
 						<li>
-							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="how_it_works.html">How it Works?</a>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/10 dark:hover:bg-blue-400/10 rounded-xl transition-all duration-300 active:scale-[0.98]" href="how_it_works.html">How it Works?</a>
 						</li>
 						<li>
-							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 rounded-lg transition-all duration-300" href="contact.html">Contact</a>
+							<a class="flex items-center px-4 py-3 text-base font-medium text-gray-700 dark:text-gray-300 hover:text-algova-primary dark:hover:text-blue-400 hover:bg-algova-primary/10 dark:hover:bg-blue-400/10 rounded-xl transition-all duration-300 active:scale-[0.98]" href="contact.html">Contact</a>
 						</li>
 					</ul>
 				</nav>
@@ -177,9 +177,9 @@
 
 
 
-	<main id="main" class="pt-20 lg:pt-24 min-h-screen">
+	<main id="main" class="pt-20 lg:pt-24 min-h-screen scroll-smooth">
 
-		<section id="hero" class="hero relative flex items-center min-h-[90vh] py-20 lg:py-32 overflow-hidden">
+		<section id="hero" class="hero relative flex items-center min-h-[90vh] py-20 lg:py-32 overflow-hidden bg-white dark:bg-gray-900">
 			<!-- Background Gradient -->
 			<div class="absolute inset-0 bg-gradient-to-br from-algova-primary/5 via-transparent to-algova-secondary/5 dark:from-blue-600/10 dark:via-transparent dark:to-blue-700/10"></div>
 			<div class="absolute top-0 right-0 w-96 h-96 bg-algova-primary/10 dark:bg-blue-400/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -215,11 +215,11 @@
 						</div>
 
 						<div class="flex flex-wrap gap-4">
-							<a href="login.html" class="group inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-600 dark:to-blue-700 text-white font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-algova-primary/50 dark:hover:shadow-blue-500/50 hover:scale-105 transform">
+							<a href="login.html" class="group inline-flex items-center px-8 py-4 rounded-xl bg-gradient-to-r from-algova-primary to-algova-secondary dark:from-blue-600 dark:to-blue-700 text-white font-semibold transition-all duration-300 hover:shadow-2xl hover:shadow-algova-primary/50 dark:hover:shadow-blue-500/50 hover:scale-105 active:scale-95 transform">
 								<span>Get Started</span>
 								<i class='bx bxs-chevron-right ml-2 transition-transform duration-300 group-hover:translate-x-1' ></i>
 							</a>
-							<a href="what_is_algova.html" class="inline-flex items-center px-8 py-4 rounded-xl bg-white dark:bg-gray-800 text-algova-primary dark:text-blue-400 font-semibold border-2 border-algova-primary/20 dark:border-blue-400/30 transition-all duration-300 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 hover:border-algova-primary dark:hover:border-blue-400">
+							<a href="what_is_algova.html" class="inline-flex items-center px-8 py-4 rounded-xl bg-white dark:bg-gray-800 text-algova-primary dark:text-blue-400 font-semibold border-2 border-algova-primary/20 dark:border-blue-400/30 transition-all duration-300 hover:bg-algova-primary/5 dark:hover:bg-blue-400/10 hover:border-algova-primary dark:hover:border-blue-400 active:scale-95">
 								<span>Learn More</span>
 							</a>
 						</div>
@@ -278,7 +278,7 @@
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
 					<div class="group">
-						<div class="relative h-full p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+						<div class="relative h-full p-8 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:bg-white/70 dark:hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-white/50 dark:hover:border-gray-700/50">
 							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
 							<div class="relative">
 								<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 flex items-center justify-center mb-6 shadow-lg">
@@ -291,7 +291,7 @@
 					</div>
 
 					<div class="group">
-						<div class="relative h-full p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+						<div class="relative h-full p-8 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:bg-white/70 dark:hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-white/50 dark:hover:border-gray-700/50">
 							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
 							<div class="relative">
 								<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 flex items-center justify-center mb-6 shadow-lg">
@@ -304,7 +304,7 @@
 					</div>
 
 					<div class="group">
-						<div class="relative h-full p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+						<div class="relative h-full p-8 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:bg-white/70 dark:hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-white/50 dark:hover:border-gray-700/50">
 							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
 							<div class="relative">
 								<div class="w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary to-algova-secondary dark:from-blue-500 dark:to-blue-600 flex items-center justify-center mb-6 shadow-lg">
@@ -357,7 +357,7 @@
 						<div class="flex flex-wrap self-center gap-4">
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class='bx bxl-react text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
@@ -368,7 +368,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class='bx bx-vector text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
@@ -379,7 +379,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class='bx bxl-sketch text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
@@ -390,7 +390,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class='bx bxs-user-voice text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
@@ -401,7 +401,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class='bx bx-paper-plane text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
@@ -412,7 +412,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class='bx bx-support text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300'></i>
@@ -442,21 +442,21 @@
 						<div class="flex flex-wrap w-full space-y-6">
 
 							<div class="w-full group">
-								<div class="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="relative p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<h4 class="text-2xl font-bold text-algova-primary dark:text-blue-400 mb-4">Empowering Your Financial Journey with Algova</h4>
 									<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">Embark on a transformative financial journey with Algova, where your trust is rewarded with remarkable wealth growth opportunities. Our commitment to utilizing advanced Algo Trading technology sets us apart, enabling you to harness the power of the stock exchange for consistent earnings. Whether you're looking for a side income or a primary livelihood, Algova is designed to cater to both novices and seasoned investors alike.</p>
 								</div>
 							</div>
 
 							<div class="w-full group">
-								<div class="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="relative p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<h4 class="text-2xl font-bold text-algova-primary dark:text-blue-400 mb-4">A Reliable Partner for Steady Income</h4>
 									<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">At Algova, we understand the value of trust and reliability in financial investments. Our dedicated team works tirelessly to ensure that our Algo Trading strategies are finely tuned to the dynamic nature of the stock market, offering you a steady and reliable source of income. Our technology-driven approach minimizes risks and maximizes returns, allowing you to enjoy a worry-free investment experience.</p>
 								</div>
 							</div>
 
 							<div class="w-full group">
-								<div class="relative p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="relative p-8 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<h4 class="text-2xl font-bold text-algova-primary dark:text-blue-400 mb-4">Innovative Technology, Minimal Effort</h4>
 									<p class="text-lg text-gray-600 dark:text-gray-400 leading-relaxed">Choosing Algova means choosing innovation and ease. Our cutting-edge Algo Trading technology does the heavy lifting for you, analyzing market trends and executing trades at optimal times to ensure the best possible outcomes. This magical trading process requires no effort on your part, making it the perfect solution for those without stock trading knowledge or those who cannot dedicate time to market analysis.</p>
 								</div>
@@ -490,7 +490,7 @@
 				</header>
 
 				<div class="max-w-4xl mx-auto mb-12">
-					<div class="p-8 lg:p-10 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 shadow-xl">
+					<div class="p-8 lg:p-10 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 shadow-xl">
 						<p class="text-lg md:text-xl text-gray-700 dark:text-gray-300 mb-4 leading-relaxed text-center">
 							Algo Trading, or <span class="font-semibold text-algova-primary dark:text-blue-400">Algorithmic Trading</span>, revolutionizes investment strategies by using sophisticated algorithms to execute trades at unparalleled speed and efficiency.
 						</p>
@@ -503,7 +503,7 @@
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
 
 					<div class="group">
-						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+						<div class="relative h-full p-8 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:bg-white/70 dark:hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-white/50 dark:hover:border-gray-700/50">
 							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
 							<div class="relative text-center">
 								<div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
@@ -516,7 +516,7 @@
 					</div>
 
 					<div class="group">
-						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+						<div class="relative h-full p-8 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:bg-white/70 dark:hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-white/50 dark:hover:border-gray-700/50">
 							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
 							<div class="relative text-center">
 								<div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
@@ -529,7 +529,7 @@
 					</div>
 
 					<div class="group">
-						<div class="relative h-full p-8 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 hover:bg-white dark:hover:bg-gray-800 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2">
+						<div class="relative h-full p-8 rounded-2xl bg-white/50 dark:bg-gray-800/50 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:bg-white/70 dark:hover:bg-gray-800/70 hover:shadow-2xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-2 hover:border-white/50 dark:hover:border-gray-700/50">
 							<div class="absolute top-0 right-0 w-20 h-20 bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 rounded-bl-2xl rounded-tr-2xl"></div>
 							<div class="relative text-center">
 								<div class="w-24 h-24 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
@@ -575,7 +575,7 @@
 						<div class="flex flex-wrap self-center gap-4 w-full">
 
 									<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
@@ -586,7 +586,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
@@ -597,7 +597,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
@@ -608,7 +608,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
@@ -619,7 +619,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
@@ -630,7 +630,7 @@
 							</div>
 
 							<div class="w-full md:w-6/12">
-								<div class="group relative p-6 rounded-2xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-gray-200/50 dark:border-gray-700/50 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-algova-primary/30 dark:hover:border-blue-400/30">
+								<div class="group relative p-6 rounded-2xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border border-white/30 dark:border-gray-700/30 transition-all duration-500 h-full hover:shadow-xl hover:shadow-algova-primary/10 dark:hover:shadow-blue-400/10 hover:-translate-y-1 hover:border-white/50 dark:hover:border-gray-700/50 hover:bg-white/70 dark:hover:bg-gray-800/70">
 									<div class="flex items-center gap-4">
 										<div class="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-algova-primary/10 to-algova-secondary/10 dark:from-blue-400/10 dark:to-blue-500/10 flex items-center justify-center group-hover:from-algova-primary group-hover:to-algova-secondary dark:group-hover:from-blue-500 dark:group-hover:to-blue-600 transition-all duration-300">
 											<i class="bx bx-check text-2xl text-algova-primary dark:text-blue-400 group-hover:text-white transition-colors duration-300"></i>
@@ -738,7 +738,7 @@
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
 
 					<div class="group">
-						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-[#2db6fa]/20 dark:border-[#2db6fa]/30 transition-all duration-500 hover:border-[#2db6fa] dark:hover:border-[#2db6fa] hover:shadow-2xl hover:shadow-[#2db6fa]/20 dark:hover:shadow-[#2db6fa]/20 hover:-translate-y-2">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border-2 border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:border-[#2db6fa]/50 dark:hover:border-[#2db6fa]/50 hover:shadow-2xl hover:shadow-[#2db6fa]/20 dark:hover:shadow-[#2db6fa]/20 hover:-translate-y-2 hover:bg-white/70 dark:hover:bg-gray-800/70">
 							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#2db6fa]/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
 							<div class="relative text-center">
 								<div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#2db6fa]/10 to-[#2db6fa]/5 dark:from-[#2db6fa]/20 dark:to-[#2db6fa]/10 flex items-center justify-center group-hover:from-[#2db6fa] group-hover:to-[#2db6fa]/80 transition-all duration-300">
@@ -751,7 +751,7 @@
 					</div>
 
 					<div class="group">
-						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-[#f68c09]/20 dark:border-[#f68c09]/30 transition-all duration-500 hover:border-[#f68c09] dark:hover:border-[#f68c09] hover:shadow-2xl hover:shadow-[#f68c09]/20 dark:hover:shadow-[#f68c09]/20 hover:-translate-y-2">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border-2 border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:border-[#f68c09]/50 dark:hover:border-[#f68c09]/50 hover:shadow-2xl hover:shadow-[#f68c09]/20 dark:hover:shadow-[#f68c09]/20 hover:-translate-y-2 hover:bg-white/70 dark:hover:bg-gray-800/70">
 							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#f68c09]/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
 							<div class="relative text-center">
 								<div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#f68c09]/10 to-[#f68c09]/5 dark:from-[#f68c09]/20 dark:to-[#f68c09]/10 flex items-center justify-center group-hover:from-[#f68c09] group-hover:to-[#f68c09]/80 transition-all duration-300">
@@ -764,7 +764,7 @@
 					</div>
 
 					<div class="group">
-						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border-2 border-[#08da4e]/20 dark:border-[#08da4e]/30 transition-all duration-500 hover:border-[#08da4e] dark:hover:border-[#08da4e] hover:shadow-2xl hover:shadow-[#08da4e]/20 dark:hover:shadow-[#08da4e]/20 hover:-translate-y-2">
+						<div class="relative h-full p-8 lg:p-10 rounded-3xl bg-white/60 dark:bg-gray-800/60 backdrop-blur-xl border-2 border-white/30 dark:border-gray-700/30 transition-all duration-500 hover:border-[#08da4e]/50 dark:hover:border-[#08da4e]/50 hover:shadow-2xl hover:shadow-[#08da4e]/20 dark:hover:shadow-[#08da4e]/20 hover:-translate-y-2 hover:bg-white/70 dark:hover:bg-gray-800/70">
 							<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-[#08da4e]/10 to-transparent rounded-bl-3xl rounded-tr-3xl"></div>
 							<div class="relative text-center">
 								<div class="w-20 h-20 mx-auto mb-6 rounded-2xl bg-gradient-to-br from-[#08da4e]/10 to-[#08da4e]/5 dark:from-[#08da4e]/20 dark:to-[#08da4e]/10 flex items-center justify-center group-hover:from-[#08da4e] group-hover:to-[#08da4e]/80 transition-all duration-300">

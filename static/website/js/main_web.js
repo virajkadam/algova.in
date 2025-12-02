@@ -109,18 +109,17 @@
 	// Mobile menu toggle (new modern header)
 	on('click', '#mobile-menu-toggle', function(e) {
 		e.preventDefault()
+		e.stopPropagation()
 		let mobileMenu = select('#mobile-menu')
-		if (mobileMenu) {
+		let menuIcon = select('#mobile-menu-icon')
+		if (mobileMenu && menuIcon) {
 			mobileMenu.classList.toggle('hidden')
-			let icon = this.querySelector('i')
-			if (icon) {
-				if (mobileMenu.classList.contains('hidden')) {
-					icon.classList.remove('bx-x')
-					icon.classList.add('bx-menu')
-				} else {
-					icon.classList.remove('bx-menu')
-					icon.classList.add('bx-x')
-				}
+			if (mobileMenu.classList.contains('hidden')) {
+				menuIcon.classList.remove('bx-x')
+				menuIcon.classList.add('bx-menu')
+			} else {
+				menuIcon.classList.remove('bx-menu')
+				menuIcon.classList.add('bx-x')
 			}
 		}
 	})
@@ -128,14 +127,25 @@
 	// Close mobile menu when clicking on a link
 	on('click', '#mobile-menu a', function() {
 		let mobileMenu = select('#mobile-menu')
-		if (mobileMenu) {
+		let menuIcon = select('#mobile-menu-icon')
+		if (mobileMenu && menuIcon) {
 			mobileMenu.classList.add('hidden')
-			let toggleBtn = select('#mobile-menu-toggle')
-			if (toggleBtn) {
-				let icon = toggleBtn.querySelector('i')
-				if (icon) {
-					icon.classList.remove('bx-x')
-					icon.classList.add('bx-menu')
+			menuIcon.classList.remove('bx-x')
+			menuIcon.classList.add('bx-menu')
+		}
+	})
+	
+	// Close mobile menu when clicking outside
+	document.addEventListener('click', function(e) {
+		let mobileMenu = select('#mobile-menu')
+		let toggleBtn = select('#mobile-menu-toggle')
+		let menuIcon = select('#mobile-menu-icon')
+		if (mobileMenu && !mobileMenu.contains(e.target) && toggleBtn && !toggleBtn.contains(e.target)) {
+			if (!mobileMenu.classList.contains('hidden')) {
+				mobileMenu.classList.add('hidden')
+				if (menuIcon) {
+					menuIcon.classList.remove('bx-x')
+					menuIcon.classList.add('bx-menu')
 				}
 			}
 		}
